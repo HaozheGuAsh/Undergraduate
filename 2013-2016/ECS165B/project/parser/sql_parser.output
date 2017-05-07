@@ -1,0 +1,1705 @@
+Terminals unused in grammar
+
+   DISTINCT
+   NOT
+   ERROR
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: sql_command
+    2        | QUIT ';'
+
+    3 sql_command: INSERT INTO tablename VALUES '(' data_list ')' ';'
+    4            | INSERT INTO tablename select_expr ';'
+    5            | select_expr ';'
+    6            | UPDATE tablename SET colname '=' expr WHERE expr ';'
+    7            | DELETE FROM tablename WHERE expr ';'
+    8            | CREATE TABLE tablename '(' column_decls ')' ';'
+    9            | DESCRIBE tablename ';'
+   10            | SHOW TABLES ';'
+   11            | DROP TABLE tablename ';'
+   12            | error ';'
+
+   13 tablename: IDENT
+   14          | error ';'
+
+   15 colname: IDENT
+   16        | error ';'
+
+   17 expr: value
+   18     | expr bin_op value
+   19     | expr bin_op '(' expr ')'
+   20     | expr bin_op '(' select_expr ')'
+   21     | '(' select_expr ')'
+   22     | '(' expr ')'
+   23     | fcall
+
+   24 fcall: IDENT '(' fncargs ')'
+   25      | IDENT '(' ')'
+
+   26 fncargs: expr
+   27        | fncargs ',' expr
+
+   28 value: IDENT
+   29      | "integer"
+   30      | "string"
+
+   31 select_expr: SELECT projection FROM join whereclause groupclause havingclause orderclause
+
+   32 whereclause: %empty
+   33            | WHERE expr
+
+   34 havingclause: %empty
+   35             | HAVING expr
+
+   36 groupclause: %empty
+   37            | GROUP BY grouplist
+
+   38 grouplist: groupspec
+   39          | grouplist ',' groupspec
+
+   40 groupspec: colname
+
+   41 orderclause: %empty
+   42            | ORDER BY orderlist
+
+   43 orderlist: orderspec
+   44          | orderlist ',' orderspec
+
+   45 orderspec: "integer"
+   46          | "integer" ASC
+   47          | "integer" DESC
+   48          | colname
+   49          | colname ASC
+   50          | colname DESC
+
+   51 projection: outcol
+   52           | projection ',' outcol
+
+   53 outcol: expr AS colname
+   54       | colname
+
+   55 join: tablename
+   56     | join tablename
+
+   57 data_list: "integer"
+   58          | "string"
+   59          | NUL
+   60          | data_list ',' "integer"
+   61          | data_list ',' "string"
+   62          | data_list ',' NUL
+   63          | error
+
+   64 column_decls: column_decl
+   65             | column_decls ',' column_decl
+
+   66 column_decl: colname
+   67            | colname KEY
+   68            | colname PRIMARY KEY
+
+   69 bin_op: '='
+   70       | NOTEQ
+   71       | '>'
+   72       | '<'
+   73       | GEQ
+   74       | LEQ
+   75       | '+'
+   76       | '-'
+   77       | '*'
+   78       | '/'
+   79       | AND
+   80       | OR
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+'(' (40) 3 8 19 20 21 22 24 25
+')' (41) 3 8 19 20 21 22 24 25
+'*' (42) 77
+'+' (43) 75
+',' (44) 27 39 44 52 60 61 62 65
+'-' (45) 76
+'/' (47) 78
+';' (59) 2 3 4 5 6 7 8 9 10 11 12 14 16
+'<' (60) 72
+'=' (61) 6 69
+'>' (62) 71
+error (256) 12 14 16 63
+IDENT (258) 13 15 24 25 28
+"integer" (259) 29 45 46 47 57 60
+"string" (260) 30 58 61
+NUL (261) 59 62
+SELECT (262) 31
+AS (263) 53
+FROM (264) 7 31
+WHERE (265) 6 7 33
+GROUP (266) 37
+BY (267) 37 42
+HAVING (268) 35
+ORDER (269) 42
+ASC (270) 46 49
+DESC (271) 47 50
+INSERT (272) 3 4
+INTO (273) 3 4
+VALUES (274) 3
+UPDATE (275) 6
+SET (276) 6
+DELETE (277) 7
+CREATE (278) 8
+TABLE (279) 8 11
+DESCRIBE (280) 9
+SHOW (281) 10
+TABLES (282) 10
+DROP (283) 11
+PRIMARY (284) 68
+DISTINCT (285)
+KEY (286) 67 68
+NOTEQ (287) 70
+GEQ (288) 73
+LEQ (289) 74
+AND (290) 79
+OR (291) 80
+NOT (292)
+ERROR (293)
+QUIT (294) 2
+
+
+Nonterminals, with rules where they appear
+
+$accept (51)
+    on left: 0
+program (52)
+    on left: 1 2, on right: 0
+sql_command (53)
+    on left: 3 4 5 6 7 8 9 10 11 12, on right: 1
+tablename (54)
+    on left: 13 14, on right: 3 4 6 7 8 9 11 55 56
+colname (55)
+    on left: 15 16, on right: 6 40 48 49 50 53 54 66 67 68
+expr (56)
+    on left: 17 18 19 20 21 22 23, on right: 6 7 18 19 20 22 26 27
+    33 35 53
+fcall (57)
+    on left: 24 25, on right: 23
+fncargs (58)
+    on left: 26 27, on right: 24 27
+value (59)
+    on left: 28 29 30, on right: 17 18
+select_expr (60)
+    on left: 31, on right: 4 5 20 21
+whereclause (61)
+    on left: 32 33, on right: 31
+havingclause (62)
+    on left: 34 35, on right: 31
+groupclause (63)
+    on left: 36 37, on right: 31
+grouplist (64)
+    on left: 38 39, on right: 37 39
+groupspec (65)
+    on left: 40, on right: 38 39
+orderclause (66)
+    on left: 41 42, on right: 31
+orderlist (67)
+    on left: 43 44, on right: 42 44
+orderspec (68)
+    on left: 45 46 47 48 49 50, on right: 43 44
+projection (69)
+    on left: 51 52, on right: 31 52
+outcol (70)
+    on left: 53 54, on right: 51 52
+join (71)
+    on left: 55 56, on right: 31 56
+data_list (72)
+    on left: 57 58 59 60 61 62 63, on right: 3 60 61 62
+column_decls (73)
+    on left: 64 65, on right: 8 65
+column_decl (74)
+    on left: 66 67 68, on right: 64 65
+bin_op (75)
+    on left: 69 70 71 72 73 74 75 76 77 78 79 80, on right: 18 19 20
+
+
+State 0
+
+    0 $accept: . program $end
+
+    error     shift, and go to state 1
+    SELECT    shift, and go to state 2
+    INSERT    shift, and go to state 3
+    UPDATE    shift, and go to state 4
+    DELETE    shift, and go to state 5
+    CREATE    shift, and go to state 6
+    DESCRIBE  shift, and go to state 7
+    SHOW      shift, and go to state 8
+    DROP      shift, and go to state 9
+    QUIT      shift, and go to state 10
+
+    program      go to state 11
+    sql_command  go to state 12
+    select_expr  go to state 13
+
+
+State 1
+
+   12 sql_command: error . ';'
+
+    ';'  shift, and go to state 14
+
+
+State 2
+
+   31 select_expr: SELECT . projection FROM join whereclause groupclause havingclause orderclause
+
+    error      shift, and go to state 15
+    IDENT      shift, and go to state 16
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    colname     go to state 20
+    expr        go to state 21
+    fcall       go to state 22
+    value       go to state 23
+    projection  go to state 24
+    outcol      go to state 25
+
+
+State 3
+
+    3 sql_command: INSERT . INTO tablename VALUES '(' data_list ')' ';'
+    4            | INSERT . INTO tablename select_expr ';'
+
+    INTO  shift, and go to state 26
+
+
+State 4
+
+    6 sql_command: UPDATE . tablename SET colname '=' expr WHERE expr ';'
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 29
+
+
+State 5
+
+    7 sql_command: DELETE . FROM tablename WHERE expr ';'
+
+    FROM  shift, and go to state 30
+
+
+State 6
+
+    8 sql_command: CREATE . TABLE tablename '(' column_decls ')' ';'
+
+    TABLE  shift, and go to state 31
+
+
+State 7
+
+    9 sql_command: DESCRIBE . tablename ';'
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 32
+
+
+State 8
+
+   10 sql_command: SHOW . TABLES ';'
+
+    TABLES  shift, and go to state 33
+
+
+State 9
+
+   11 sql_command: DROP . TABLE tablename ';'
+
+    TABLE  shift, and go to state 34
+
+
+State 10
+
+    2 program: QUIT . ';'
+
+    ';'  shift, and go to state 35
+
+
+State 11
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 36
+
+
+State 12
+
+    1 program: sql_command .
+
+    $default  reduce using rule 1 (program)
+
+
+State 13
+
+    5 sql_command: select_expr . ';'
+
+    ';'  shift, and go to state 37
+
+
+State 14
+
+   12 sql_command: error ';' .
+
+    $default  reduce using rule 12 (sql_command)
+
+
+State 15
+
+   16 colname: error . ';'
+
+    ';'  shift, and go to state 38
+
+
+State 16
+
+   15 colname: IDENT .
+   24 fcall: IDENT . '(' fncargs ')'
+   25      | IDENT . '(' ')'
+   28 value: IDENT .
+
+    '('  shift, and go to state 39
+
+    FROM      reduce using rule 15 (colname)
+    ','       reduce using rule 15 (colname)
+    $default  reduce using rule 28 (value)
+
+
+State 17
+
+   29 value: "integer" .
+
+    $default  reduce using rule 29 (value)
+
+
+State 18
+
+   30 value: "string" .
+
+    $default  reduce using rule 30 (value)
+
+
+State 19
+
+   21 expr: '(' . select_expr ')'
+   22     | '(' . expr ')'
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    SELECT     shift, and go to state 2
+    '('        shift, and go to state 19
+
+    expr         go to state 41
+    fcall        go to state 22
+    value        go to state 23
+    select_expr  go to state 42
+
+
+State 20
+
+   54 outcol: colname .
+
+    $default  reduce using rule 54 (outcol)
+
+
+State 21
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+   53 outcol: expr . AS colname
+
+    AS     shift, and go to state 43
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    bin_op  go to state 56
+
+
+State 22
+
+   23 expr: fcall .
+
+    $default  reduce using rule 23 (expr)
+
+
+State 23
+
+   17 expr: value .
+
+    $default  reduce using rule 17 (expr)
+
+
+State 24
+
+   31 select_expr: SELECT projection . FROM join whereclause groupclause havingclause orderclause
+   52 projection: projection . ',' outcol
+
+    FROM  shift, and go to state 57
+    ','   shift, and go to state 58
+
+
+State 25
+
+   51 projection: outcol .
+
+    $default  reduce using rule 51 (projection)
+
+
+State 26
+
+    3 sql_command: INSERT INTO . tablename VALUES '(' data_list ')' ';'
+    4            | INSERT INTO . tablename select_expr ';'
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 59
+
+
+State 27
+
+   14 tablename: error . ';'
+
+    ';'  shift, and go to state 60
+
+
+State 28
+
+   13 tablename: IDENT .
+
+    $default  reduce using rule 13 (tablename)
+
+
+State 29
+
+    6 sql_command: UPDATE tablename . SET colname '=' expr WHERE expr ';'
+
+    SET  shift, and go to state 61
+
+
+State 30
+
+    7 sql_command: DELETE FROM . tablename WHERE expr ';'
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 62
+
+
+State 31
+
+    8 sql_command: CREATE TABLE . tablename '(' column_decls ')' ';'
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 63
+
+
+State 32
+
+    9 sql_command: DESCRIBE tablename . ';'
+
+    ';'  shift, and go to state 64
+
+
+State 33
+
+   10 sql_command: SHOW TABLES . ';'
+
+    ';'  shift, and go to state 65
+
+
+State 34
+
+   11 sql_command: DROP TABLE . tablename ';'
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 66
+
+
+State 35
+
+    2 program: QUIT ';' .
+
+    $default  reduce using rule 2 (program)
+
+
+State 36
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+State 37
+
+    5 sql_command: select_expr ';' .
+
+    $default  reduce using rule 5 (sql_command)
+
+
+State 38
+
+   16 colname: error ';' .
+
+    $default  reduce using rule 16 (colname)
+
+
+State 39
+
+   24 fcall: IDENT '(' . fncargs ')'
+   25      | IDENT '(' . ')'
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+    ')'        shift, and go to state 67
+
+    expr     go to state 68
+    fcall    go to state 22
+    fncargs  go to state 69
+    value    go to state 23
+
+
+State 40
+
+   24 fcall: IDENT . '(' fncargs ')'
+   25      | IDENT . '(' ')'
+   28 value: IDENT .
+
+    '('  shift, and go to state 39
+
+    $default  reduce using rule 28 (value)
+
+
+State 41
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+   22     | '(' expr . ')'
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    ')'    shift, and go to state 70
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    bin_op  go to state 56
+
+
+State 42
+
+   21 expr: '(' select_expr . ')'
+
+    ')'  shift, and go to state 71
+
+
+State 43
+
+   53 outcol: expr AS . colname
+
+    error  shift, and go to state 15
+    IDENT  shift, and go to state 72
+
+    colname  go to state 73
+
+
+State 44
+
+   70 bin_op: NOTEQ .
+
+    $default  reduce using rule 70 (bin_op)
+
+
+State 45
+
+   73 bin_op: GEQ .
+
+    $default  reduce using rule 73 (bin_op)
+
+
+State 46
+
+   74 bin_op: LEQ .
+
+    $default  reduce using rule 74 (bin_op)
+
+
+State 47
+
+   79 bin_op: AND .
+
+    $default  reduce using rule 79 (bin_op)
+
+
+State 48
+
+   80 bin_op: OR .
+
+    $default  reduce using rule 80 (bin_op)
+
+
+State 49
+
+   69 bin_op: '=' .
+
+    $default  reduce using rule 69 (bin_op)
+
+
+State 50
+
+   71 bin_op: '>' .
+
+    $default  reduce using rule 71 (bin_op)
+
+
+State 51
+
+   72 bin_op: '<' .
+
+    $default  reduce using rule 72 (bin_op)
+
+
+State 52
+
+   75 bin_op: '+' .
+
+    $default  reduce using rule 75 (bin_op)
+
+
+State 53
+
+   76 bin_op: '-' .
+
+    $default  reduce using rule 76 (bin_op)
+
+
+State 54
+
+   77 bin_op: '*' .
+
+    $default  reduce using rule 77 (bin_op)
+
+
+State 55
+
+   78 bin_op: '/' .
+
+    $default  reduce using rule 78 (bin_op)
+
+
+State 56
+
+   18 expr: expr bin_op . value
+   19     | expr bin_op . '(' expr ')'
+   20     | expr bin_op . '(' select_expr ')'
+
+    IDENT      shift, and go to state 74
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 75
+
+    value  go to state 76
+
+
+State 57
+
+   31 select_expr: SELECT projection FROM . join whereclause groupclause havingclause orderclause
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+
+    tablename  go to state 77
+    join       go to state 78
+
+
+State 58
+
+   52 projection: projection ',' . outcol
+
+    error      shift, and go to state 15
+    IDENT      shift, and go to state 16
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    colname  go to state 20
+    expr     go to state 21
+    fcall    go to state 22
+    value    go to state 23
+    outcol   go to state 79
+
+
+State 59
+
+    3 sql_command: INSERT INTO tablename . VALUES '(' data_list ')' ';'
+    4            | INSERT INTO tablename . select_expr ';'
+
+    SELECT  shift, and go to state 2
+    VALUES  shift, and go to state 80
+
+    select_expr  go to state 81
+
+
+State 60
+
+   14 tablename: error ';' .
+
+    $default  reduce using rule 14 (tablename)
+
+
+State 61
+
+    6 sql_command: UPDATE tablename SET . colname '=' expr WHERE expr ';'
+
+    error  shift, and go to state 15
+    IDENT  shift, and go to state 72
+
+    colname  go to state 82
+
+
+State 62
+
+    7 sql_command: DELETE FROM tablename . WHERE expr ';'
+
+    WHERE  shift, and go to state 83
+
+
+State 63
+
+    8 sql_command: CREATE TABLE tablename . '(' column_decls ')' ';'
+
+    '('  shift, and go to state 84
+
+
+State 64
+
+    9 sql_command: DESCRIBE tablename ';' .
+
+    $default  reduce using rule 9 (sql_command)
+
+
+State 65
+
+   10 sql_command: SHOW TABLES ';' .
+
+    $default  reduce using rule 10 (sql_command)
+
+
+State 66
+
+   11 sql_command: DROP TABLE tablename . ';'
+
+    ';'  shift, and go to state 85
+
+
+State 67
+
+   25 fcall: IDENT '(' ')' .
+
+    $default  reduce using rule 25 (fcall)
+
+
+State 68
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+   26 fncargs: expr .
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    $default  reduce using rule 26 (fncargs)
+
+    bin_op  go to state 56
+
+
+State 69
+
+   24 fcall: IDENT '(' fncargs . ')'
+   27 fncargs: fncargs . ',' expr
+
+    ')'  shift, and go to state 86
+    ','  shift, and go to state 87
+
+
+State 70
+
+   22 expr: '(' expr ')' .
+
+    $default  reduce using rule 22 (expr)
+
+
+State 71
+
+   21 expr: '(' select_expr ')' .
+
+    $default  reduce using rule 21 (expr)
+
+
+State 72
+
+   15 colname: IDENT .
+
+    $default  reduce using rule 15 (colname)
+
+
+State 73
+
+   53 outcol: expr AS colname .
+
+    $default  reduce using rule 53 (outcol)
+
+
+State 74
+
+   28 value: IDENT .
+
+    $default  reduce using rule 28 (value)
+
+
+State 75
+
+   19 expr: expr bin_op '(' . expr ')'
+   20     | expr bin_op '(' . select_expr ')'
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    SELECT     shift, and go to state 2
+    '('        shift, and go to state 19
+
+    expr         go to state 88
+    fcall        go to state 22
+    value        go to state 23
+    select_expr  go to state 89
+
+
+State 76
+
+   18 expr: expr bin_op value .
+
+    $default  reduce using rule 18 (expr)
+
+
+State 77
+
+   55 join: tablename .
+
+    $default  reduce using rule 55 (join)
+
+
+State 78
+
+   31 select_expr: SELECT projection FROM join . whereclause groupclause havingclause orderclause
+   56 join: join . tablename
+
+    error  shift, and go to state 27
+    IDENT  shift, and go to state 28
+    WHERE  shift, and go to state 90
+
+    GROUP   reduce using rule 32 (whereclause)
+    HAVING  reduce using rule 32 (whereclause)
+    ORDER   reduce using rule 32 (whereclause)
+    ';'     reduce using rule 32 (whereclause)
+    ')'     reduce using rule 32 (whereclause)
+
+    tablename    go to state 91
+    whereclause  go to state 92
+
+
+State 79
+
+   52 projection: projection ',' outcol .
+
+    $default  reduce using rule 52 (projection)
+
+
+State 80
+
+    3 sql_command: INSERT INTO tablename VALUES . '(' data_list ')' ';'
+
+    '('  shift, and go to state 93
+
+
+State 81
+
+    4 sql_command: INSERT INTO tablename select_expr . ';'
+
+    ';'  shift, and go to state 94
+
+
+State 82
+
+    6 sql_command: UPDATE tablename SET colname . '=' expr WHERE expr ';'
+
+    '='  shift, and go to state 95
+
+
+State 83
+
+    7 sql_command: DELETE FROM tablename WHERE . expr ';'
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    expr   go to state 96
+    fcall  go to state 22
+    value  go to state 23
+
+
+State 84
+
+    8 sql_command: CREATE TABLE tablename '(' . column_decls ')' ';'
+
+    error  shift, and go to state 15
+    IDENT  shift, and go to state 72
+
+    colname       go to state 97
+    column_decls  go to state 98
+    column_decl   go to state 99
+
+
+State 85
+
+   11 sql_command: DROP TABLE tablename ';' .
+
+    $default  reduce using rule 11 (sql_command)
+
+
+State 86
+
+   24 fcall: IDENT '(' fncargs ')' .
+
+    $default  reduce using rule 24 (fcall)
+
+
+State 87
+
+   27 fncargs: fncargs ',' . expr
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    expr   go to state 100
+    fcall  go to state 22
+    value  go to state 23
+
+
+State 88
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   19     | expr bin_op '(' expr . ')'
+   20     | expr . bin_op '(' select_expr ')'
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    ')'    shift, and go to state 101
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    bin_op  go to state 56
+
+
+State 89
+
+   20 expr: expr bin_op '(' select_expr . ')'
+
+    ')'  shift, and go to state 102
+
+
+State 90
+
+   33 whereclause: WHERE . expr
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    expr   go to state 103
+    fcall  go to state 22
+    value  go to state 23
+
+
+State 91
+
+   56 join: join tablename .
+
+    $default  reduce using rule 56 (join)
+
+
+State 92
+
+   31 select_expr: SELECT projection FROM join whereclause . groupclause havingclause orderclause
+
+    GROUP  shift, and go to state 104
+
+    $default  reduce using rule 36 (groupclause)
+
+    groupclause  go to state 105
+
+
+State 93
+
+    3 sql_command: INSERT INTO tablename VALUES '(' . data_list ')' ';'
+
+    error      shift, and go to state 106
+    "integer"  shift, and go to state 107
+    "string"   shift, and go to state 108
+    NUL        shift, and go to state 109
+
+    data_list  go to state 110
+
+
+State 94
+
+    4 sql_command: INSERT INTO tablename select_expr ';' .
+
+    $default  reduce using rule 4 (sql_command)
+
+
+State 95
+
+    6 sql_command: UPDATE tablename SET colname '=' . expr WHERE expr ';'
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    expr   go to state 111
+    fcall  go to state 22
+    value  go to state 23
+
+
+State 96
+
+    7 sql_command: DELETE FROM tablename WHERE expr . ';'
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    ';'    shift, and go to state 112
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    bin_op  go to state 56
+
+
+State 97
+
+   66 column_decl: colname .
+   67            | colname . KEY
+   68            | colname . PRIMARY KEY
+
+    PRIMARY  shift, and go to state 113
+    KEY      shift, and go to state 114
+
+    $default  reduce using rule 66 (column_decl)
+
+
+State 98
+
+    8 sql_command: CREATE TABLE tablename '(' column_decls . ')' ';'
+   65 column_decls: column_decls . ',' column_decl
+
+    ')'  shift, and go to state 115
+    ','  shift, and go to state 116
+
+
+State 99
+
+   64 column_decls: column_decl .
+
+    $default  reduce using rule 64 (column_decls)
+
+
+State 100
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+   27 fncargs: fncargs ',' expr .
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    $default  reduce using rule 27 (fncargs)
+
+    bin_op  go to state 56
+
+
+State 101
+
+   19 expr: expr bin_op '(' expr ')' .
+
+    $default  reduce using rule 19 (expr)
+
+
+State 102
+
+   20 expr: expr bin_op '(' select_expr ')' .
+
+    $default  reduce using rule 20 (expr)
+
+
+State 103
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+   33 whereclause: WHERE expr .
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    $default  reduce using rule 33 (whereclause)
+
+    bin_op  go to state 56
+
+
+State 104
+
+   37 groupclause: GROUP . BY grouplist
+
+    BY  shift, and go to state 117
+
+
+State 105
+
+   31 select_expr: SELECT projection FROM join whereclause groupclause . havingclause orderclause
+
+    HAVING  shift, and go to state 118
+
+    $default  reduce using rule 34 (havingclause)
+
+    havingclause  go to state 119
+
+
+State 106
+
+   63 data_list: error .
+
+    $default  reduce using rule 63 (data_list)
+
+
+State 107
+
+   57 data_list: "integer" .
+
+    $default  reduce using rule 57 (data_list)
+
+
+State 108
+
+   58 data_list: "string" .
+
+    $default  reduce using rule 58 (data_list)
+
+
+State 109
+
+   59 data_list: NUL .
+
+    $default  reduce using rule 59 (data_list)
+
+
+State 110
+
+    3 sql_command: INSERT INTO tablename VALUES '(' data_list . ')' ';'
+   60 data_list: data_list . ',' "integer"
+   61          | data_list . ',' "string"
+   62          | data_list . ',' NUL
+
+    ')'  shift, and go to state 120
+    ','  shift, and go to state 121
+
+
+State 111
+
+    6 sql_command: UPDATE tablename SET colname '=' expr . WHERE expr ';'
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+
+    WHERE  shift, and go to state 122
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    bin_op  go to state 56
+
+
+State 112
+
+    7 sql_command: DELETE FROM tablename WHERE expr ';' .
+
+    $default  reduce using rule 7 (sql_command)
+
+
+State 113
+
+   68 column_decl: colname PRIMARY . KEY
+
+    KEY  shift, and go to state 123
+
+
+State 114
+
+   67 column_decl: colname KEY .
+
+    $default  reduce using rule 67 (column_decl)
+
+
+State 115
+
+    8 sql_command: CREATE TABLE tablename '(' column_decls ')' . ';'
+
+    ';'  shift, and go to state 124
+
+
+State 116
+
+   65 column_decls: column_decls ',' . column_decl
+
+    error  shift, and go to state 15
+    IDENT  shift, and go to state 72
+
+    colname      go to state 97
+    column_decl  go to state 125
+
+
+State 117
+
+   37 groupclause: GROUP BY . grouplist
+
+    error  shift, and go to state 15
+    IDENT  shift, and go to state 72
+
+    colname    go to state 126
+    grouplist  go to state 127
+    groupspec  go to state 128
+
+
+State 118
+
+   35 havingclause: HAVING . expr
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    expr   go to state 129
+    fcall  go to state 22
+    value  go to state 23
+
+
+State 119
+
+   31 select_expr: SELECT projection FROM join whereclause groupclause havingclause . orderclause
+
+    ORDER  shift, and go to state 130
+
+    $default  reduce using rule 41 (orderclause)
+
+    orderclause  go to state 131
+
+
+State 120
+
+    3 sql_command: INSERT INTO tablename VALUES '(' data_list ')' . ';'
+
+    ';'  shift, and go to state 132
+
+
+State 121
+
+   60 data_list: data_list ',' . "integer"
+   61          | data_list ',' . "string"
+   62          | data_list ',' . NUL
+
+    "integer"  shift, and go to state 133
+    "string"   shift, and go to state 134
+    NUL        shift, and go to state 135
+
+
+State 122
+
+    6 sql_command: UPDATE tablename SET colname '=' expr WHERE . expr ';'
+
+    IDENT      shift, and go to state 40
+    "integer"  shift, and go to state 17
+    "string"   shift, and go to state 18
+    '('        shift, and go to state 19
+
+    expr   go to state 136
+    fcall  go to state 22
+    value  go to state 23
+
+
+State 123
+
+   68 column_decl: colname PRIMARY KEY .
+
+    $default  reduce using rule 68 (column_decl)
+
+
+State 124
+
+    8 sql_command: CREATE TABLE tablename '(' column_decls ')' ';' .
+
+    $default  reduce using rule 8 (sql_command)
+
+
+State 125
+
+   65 column_decls: column_decls ',' column_decl .
+
+    $default  reduce using rule 65 (column_decls)
+
+
+State 126
+
+   40 groupspec: colname .
+
+    $default  reduce using rule 40 (groupspec)
+
+
+State 127
+
+   37 groupclause: GROUP BY grouplist .
+   39 grouplist: grouplist . ',' groupspec
+
+    ','  shift, and go to state 137
+
+    $default  reduce using rule 37 (groupclause)
+
+
+State 128
+
+   38 grouplist: groupspec .
+
+    $default  reduce using rule 38 (grouplist)
+
+
+State 129
+
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+   35 havingclause: HAVING expr .
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    $default  reduce using rule 35 (havingclause)
+
+    bin_op  go to state 56
+
+
+State 130
+
+   42 orderclause: ORDER . BY orderlist
+
+    BY  shift, and go to state 138
+
+
+State 131
+
+   31 select_expr: SELECT projection FROM join whereclause groupclause havingclause orderclause .
+
+    $default  reduce using rule 31 (select_expr)
+
+
+State 132
+
+    3 sql_command: INSERT INTO tablename VALUES '(' data_list ')' ';' .
+
+    $default  reduce using rule 3 (sql_command)
+
+
+State 133
+
+   60 data_list: data_list ',' "integer" .
+
+    $default  reduce using rule 60 (data_list)
+
+
+State 134
+
+   61 data_list: data_list ',' "string" .
+
+    $default  reduce using rule 61 (data_list)
+
+
+State 135
+
+   62 data_list: data_list ',' NUL .
+
+    $default  reduce using rule 62 (data_list)
+
+
+State 136
+
+    6 sql_command: UPDATE tablename SET colname '=' expr WHERE expr . ';'
+   18 expr: expr . bin_op value
+   19     | expr . bin_op '(' expr ')'
+   20     | expr . bin_op '(' select_expr ')'
+
+    NOTEQ  shift, and go to state 44
+    GEQ    shift, and go to state 45
+    LEQ    shift, and go to state 46
+    AND    shift, and go to state 47
+    OR     shift, and go to state 48
+    ';'    shift, and go to state 139
+    '='    shift, and go to state 49
+    '>'    shift, and go to state 50
+    '<'    shift, and go to state 51
+    '+'    shift, and go to state 52
+    '-'    shift, and go to state 53
+    '*'    shift, and go to state 54
+    '/'    shift, and go to state 55
+
+    bin_op  go to state 56
+
+
+State 137
+
+   39 grouplist: grouplist ',' . groupspec
+
+    error  shift, and go to state 15
+    IDENT  shift, and go to state 72
+
+    colname    go to state 126
+    groupspec  go to state 140
+
+
+State 138
+
+   42 orderclause: ORDER BY . orderlist
+
+    error      shift, and go to state 15
+    IDENT      shift, and go to state 72
+    "integer"  shift, and go to state 141
+
+    colname    go to state 142
+    orderlist  go to state 143
+    orderspec  go to state 144
+
+
+State 139
+
+    6 sql_command: UPDATE tablename SET colname '=' expr WHERE expr ';' .
+
+    $default  reduce using rule 6 (sql_command)
+
+
+State 140
+
+   39 grouplist: grouplist ',' groupspec .
+
+    $default  reduce using rule 39 (grouplist)
+
+
+State 141
+
+   45 orderspec: "integer" .
+   46          | "integer" . ASC
+   47          | "integer" . DESC
+
+    ASC   shift, and go to state 145
+    DESC  shift, and go to state 146
+
+    $default  reduce using rule 45 (orderspec)
+
+
+State 142
+
+   48 orderspec: colname .
+   49          | colname . ASC
+   50          | colname . DESC
+
+    ASC   shift, and go to state 147
+    DESC  shift, and go to state 148
+
+    $default  reduce using rule 48 (orderspec)
+
+
+State 143
+
+   42 orderclause: ORDER BY orderlist .
+   44 orderlist: orderlist . ',' orderspec
+
+    ','  shift, and go to state 149
+
+    $default  reduce using rule 42 (orderclause)
+
+
+State 144
+
+   43 orderlist: orderspec .
+
+    $default  reduce using rule 43 (orderlist)
+
+
+State 145
+
+   46 orderspec: "integer" ASC .
+
+    $default  reduce using rule 46 (orderspec)
+
+
+State 146
+
+   47 orderspec: "integer" DESC .
+
+    $default  reduce using rule 47 (orderspec)
+
+
+State 147
+
+   49 orderspec: colname ASC .
+
+    $default  reduce using rule 49 (orderspec)
+
+
+State 148
+
+   50 orderspec: colname DESC .
+
+    $default  reduce using rule 50 (orderspec)
+
+
+State 149
+
+   44 orderlist: orderlist ',' . orderspec
+
+    error      shift, and go to state 15
+    IDENT      shift, and go to state 72
+    "integer"  shift, and go to state 141
+
+    colname    go to state 142
+    orderspec  go to state 150
+
+
+State 150
+
+   44 orderlist: orderlist ',' orderspec .
+
+    $default  reduce using rule 44 (orderlist)

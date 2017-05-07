@@ -1,0 +1,182 @@
+日志:  接到到智能 (smart) 停止请求
+日志:  接收到 SIGHUP, 重载配置文件
+日志:  正在关闭autovacuum启动进程
+日志:  正在关闭
+日志:  数据库系统已关闭
+致命错误:  数据库系统启动中
+日志:  数据库上次关闭时间为 2016-03-10 03:55:03 PST
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+错误:  关系 "q3b" 已经存在
+语句:   SELECT TRP.HOUSEID, TRP.VEHID, TRP.TDAYDATE, TRP.TRPMILES, VEH1.EPATMPG INTO Q3B FROM( (SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES FROM DAY)TRP JOIN (SELECT HOUSEID, VEHID, EPATMPG FROM VEH)VEH1 ON TRP.HOUSEID = VEH1.HOUSEID AND TRP.VEHID = VEH1.VEHID) 
+错误:  表 "tmp" 不存在
+语句:  Drop Table TMP; Drop Table Q3C; 
+错误:  表 "q3c" 不存在
+语句:  Drop Table Q3B; Drop Table Q3C; 
+错误:  表 "q3c" 不存在
+语句:  Drop Table Q3B; Drop Table Q3C; 
+错误:  关系 "tmp" 已经存在
+语句:  SELECT YYYYMM, TRANSPORTATION INTO TMP FROM T2 WHERE MSN LIKE 'TEACEUS'
+错误:  语法错误 在 "(" 或附近的 第 66 个字符处
+语句:  SELECT YYYYMM, (TT1.ELECTRICITY/TT2.MKWH) AS CO2PKWH INTO Q3DCO2 (SELECT YYYYMM, ELECTRICITY  FROM T1  WHERE MSN LIKE 'TXEIEUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT1, (SELECT YYYYMM, MKWH  FROM T3  WHERE MSN LIKE 'TXEIEUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT2 WHERE TT1.YYYYMM = TT2.YYYYMM 
+错误:  字段关联 "yyyymm" 是不明确的 第 8 个字符处
+语句:  SELECT YYYYMM, (TT1.ELECTRICITY/TT2.MKWH) AS CO2PKWH INTO Q3DCO2 FROM (SELECT YYYYMM, ELECTRICITY  FROM T1  WHERE MSN LIKE 'TXEIEUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT1, (SELECT YYYYMM, MKWH  FROM T3  WHERE MSN LIKE 'TXEIEUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT2 WHERE TT1.YYYYMM = TT2.YYYYMM 
+错误:  关系 "q3dco2" 已经存在
+语句:  SELECT TT1.YYYYMM, (TT1.ELECTRICITY/TT2.MKWH) AS CO2PKWH INTO Q3DCO2 FROM (SELECT YYYYMM, ELECTRICITY  FROM T1  WHERE MSN LIKE 'TXEIEUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT1, (SELECT YYYYMM, MKWH  FROM T3  WHERE MSN LIKE 'ELETPUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT2 WHERE TT1.YYYYMM = TT2.YYYYMM 
+致命错误:  数据库 "haozhe26" 不存在
+日志:  数据库系统中断；上一次的启动时间是在2016-03-10 16:58:48 PST
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+日志:  数据库系统没有正确的关闭; 处于自动恢复状态中
+日志:  record with zero length at 0/3DB5B488
+日志:  不需要 redo
+致命错误:  数据库系统启动中
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+��当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+警告:  中断联接, 因为其它服务器进程崩溃
+详细信息:  Postmaster 命令此服务器进程回滚当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+日志:  数据库系统中断；上一次的启动时间是在2016-03-10 17:57:50 PST
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+日志:  lock file "postmaster.pid" contains wrong PID: 21102 instead of 20513
+日志:  performing immediate shutdown because data directory lock file is invalid
+日志:  接收到立即 (immediate) 停止请求
+警告:  中断联接, 因为其它服务器进程崩溃
+详细信息:  Postmaster 命令此服务器进程回滚当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+警告:  中断联接, 因为其它服务器进程崩溃
+详细信息:  Postmaster 命令此服务器进程回滚当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+日志:  数据库系统没有正确的关闭; 处于自动恢复状态中
+日志:  record with zero length at 0/3DB5B4F0
+日志:  不需要 redo
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+日志:  无法打开文件 "postmaster.pid": 没有那个文件或目录
+日志:  performing immediate shutdown because data directory lock file is invalid
+日志:  接收到立即 (immediate) 停止请求
+警告:  中断联接, 因为其它服务器进程崩溃
+详细信息:  Postmaster 命令此服务器进程回滚当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+致命错误:  数据库系统启动中
+日志:  数据库系统中断；上一次的启动时间是在2016-03-10 17:58:52 PST
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+日志:  数据库系统没有正确的关闭; 处于自动恢复状态中
+日志:  record with zero length at 0/3DB5B558
+日志:  不需要 redo
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+错误:  关系 "q3dco2" 已经存在
+语句:  SELECT TT1.YYYYMM, (TT1.ELECTRICITY/TT2.MKWH) AS CO2PKWH INTO Q3DCO2 FROM (SELECT YYYYMM, ELECTRICITY  FROM T1  WHERE MSN LIKE 'TXEIEUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT1, (SELECT YYYYMM, MKWH  FROM T3  WHERE MSN LIKE 'ELETPUS' AND (YYYYMM LIKE '200803' OR YYYYMM LIKE '200804' OR YYYYMM LIKE '200805' OR YYYYMM LIKE '200806' OR YYYYMM LIKE '200807' OR YYYYMM LIKE '200808' OR YYYYMM LIKE '200809' OR YYYYMM LIKE '200810' OR YYYYMM LIKE '200811' OR YYYYMM LIKE '200812' OR YYYYMM LIKE '200901' OR YYYYMM LIKE '200902' OR YYYYMM LIKE '200903' OR YYYYMM LIKE '200904' ))AS TT2 WHERE TT1.YYYYMM = TT2.YYYYMM 
+错误:  字段 q3dco2.electricity 不存在 第 437 个字符处
+语句:  SELECT SUM(T8.TOTCO2 - T8.TOTCO2NOW)   FROM (SELECT T7.TDAYDATE, (T7.GASCO2 + T7.ECO2)AS TOTCO2NOW, T7.TOTCO2    FROM (SELECT T6.TDAYDATE, SUM(T6.CO2)AS ECO2, SUM(T6.GCO2*0.008887)AS GASCO2, T6.TOTCO2  FROM (SELECT T5.HOUSEID, T5.VEHID, T5.TDAYDATE, (T5.ELECO2 / Q3C.C * 117538000 * Q3C.DAYS)AS CO2, (T5.GASMILE / T5.EPATMPG / Q3C.C * 117538000 * Q3C.DAYS)AS GCO2, Q3C.TOTCO2   FROM Q3C, (SELECT T4.HOUSEID, T4.VEHID, T4.TDAYDATE, (KWH*Q3DCO2.ELECTRICITY)AS ELECO2, T4.GASMILE, T4.ELEMILE, T4.EPATMPG FROM Q3DCO2, (SELECT *  FROM ((SELECT HOUSEID,VEHID, TDAYDATE, ( 40/ MPKWH)AS KWH, (TOTMIL -  40)AS GASMILE,  40 AS ELEMILE, EPATMPG FROM (SELECT HOUSEID, VEHID, TDAYDATE, SUM(TRPMILES)AS TOTMIL, MPKWH, EPATMPG FROM(SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES, (3 / 33.1*EPATMPG)AS MPKWH, EPATMPG FROM Q3B)T1 GROUP BY HOUSEID, VEHID, TDAYDATE, MPKWH, EPATMPG)T2 WHERE TOTMIL >=  40))T3 UNION (SELECT HOUSEID, VEHID, TDAYDATE, (TOTMIL / MPKWH)AS KWH, 0AS GASMILE, TOTMIL AS ELEMILE, EPATMPG  FROM (SELECT HOUSEID, VEHID, TDAYDATE, SUM(TRPMILES)AS TOTMIL, MPKWH, EPATMPG FROM(SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES, (3 / 33.1*EPATMPG)AS MPKWH, EPATMPG FROM Q3B)T1 GROUP BY HOUSEID, VEHID, TDAYDATE, MPKWH, EPATMPG)T2 WHERE TOTMIL <=  40 AND TOTMIL>0))AS T4 WHERE Q3DCO2.YYYYMM = T4.TDAYDATE)AS T5 WHERE T5.TDAYDATE = Q3C.TDAYDATE)AS T6 GROUP BY TDAYDATE, TOTCO2)AS T7)AS T8 
+日志:  接到到智能 (smart) 停止请求
+日志:  正在关闭autovacuum启动进程
+致命错误:  由于管理员命令中断联接
+致命错误:  由于管理员命令中断联接
+语句:  Drop Table Q3DCO2;
+日志:  正在关闭
+日志:  数据库系统已关闭
+日志:  数据库上次关闭时间为 2016-03-10 18:09:15 PST
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+错误:  语法错误 在 ";" 或附近的 第 73 个字符处
+语句:  CREATE TABLE T1(MSN VARCHAR(15),YYYYMM VARCHAR(15),ELECTRICITY FLOAT(50);
+错误:  表 "t1" 不存在
+语句:  Drop Table T1; Drop Table T2; Drop Table T3; Drop Table T4; Drop Table DAY; Drop Table VEH; 
+错误:  字段 q3dco2.e 不存在 第 366 个字符处
+语句:  SELECT T7.TDAYDATE, (T7.GASCO2+T7.ECO2)AS TOTCO2NOW,T7.TOTCO2    FROM
+	(SELECT T6.TDAYDATE,SUM(T6.CO2)AS ECO2,SUM(T6.GCO2*0.008887)AS GASCO2,T6.TOTCO2  FROM 
+	(SELECT T5.HOUSEID,T5.VEHID,T5.TDAYDATE,(T5.ELECO2/Q3C.C*117538000*Q3C.DAYS)AS CO2,(T5.GASMILE/T5.EPATMPG /Q3C.C*117538000*Q3C.DAYS)AS GCO2,Q3C.TOTCO2   FROM Q3C,
+	(SELECT T4.HOUSEID,T4.VEHID,T4.TDAYDATE,(KWH*Q3DCO2.E)AS ELECO2,T4.GASMILE,T4.ELEMILE,T4.EPATMPG FROM Q3DCO2,
+	(SELECT *  FROM 
+	((SELECT HOUSEID,VEHID,TDAYDATE,(60/MPKWH)AS KWH,(TOTMIL-60)AS GASMILE, 60 AS ELEMILE ,EPATMPG FROM
+	(SELECT HOUSEID,VEHID,TDAYDATE,SUM(TRPMILES)AS TOTMIL,MPKWH,EPATMPG  
+	FROM (SELECT HOUSEID,VEHID,TDAYDATE,TRPMILES,(3/33.1*EPATMPG)AS MPKWH,EPATMPG FROM Q3B)T1 GROUP BY HOUSEID,VEHID,TDAYDATE,MPKWH,EPATMPG)T2
+	WHERE TOTMIL>=60))T3
+	UNION
+	(SELECT HOUSEID,VEHID,TDAYDATE,(TOTMIL/MPKWH)AS KWH,0AS GASMILE, TOTMIL AS ELEMILE,EPATMPG  FROM
+	(SELECT HOUSEID,VEHID,TDAYDATE,SUM(TRPMILES)AS TOTMIL,MPKWH,EPATMPG 
+	FROM (SELECT HOUSEID,VEHID,TDAYDATE,TRPMILES,(3/33.1*EPATMPG)AS MPKWH,EPATMPG FROM Q3B)T1 GROUP BY HOUSEID,VEHID,TDAYDATE,MPKWH,EPATMPG)T2
+	WHERE TOTMIL<60 AND TOTMIL>0))AS T4
+	WHERE Q3DCO2.YYYYMM = T4.TDAYDATE)AS T5
+	WHERE T5.TDAYDATE = Q3C.TDAYDATE)AS T6
+	GROUP BY TDAYDATE,TOTCO2)AS T7
+错误:  字段 q3dco2.electricity 不存在 第 366 个字符处
+语句:  SELECT T7.TDAYDATE, (T7.GASCO2+T7.ECO2)AS TOTCO2NOW,T7.TOTCO2    FROM
+	(SELECT T6.TDAYDATE,SUM(T6.CO2)AS ECO2,SUM(T6.GCO2*0.008887)AS GASCO2,T6.TOTCO2  FROM 
+	(SELECT T5.HOUSEID,T5.VEHID,T5.TDAYDATE,(T5.ELECO2/Q3C.C*117538000*Q3C.DAYS)AS CO2,(T5.GASMILE/T5.EPATMPG /Q3C.C*117538000*Q3C.DAYS)AS GCO2,Q3C.TOTCO2   FROM Q3C,
+	(SELECT T4.HOUSEID,T4.VEHID,T4.TDAYDATE,(KWH*Q3DCO2.ELECTRICITY)AS ELECO2,T4.GASMILE,T4.ELEMILE,T4.EPATMPG FROM Q3DCO2,
+	(SELECT *  FROM 
+	((SELECT HOUSEID,VEHID,TDAYDATE,(60/MPKWH)AS KWH,(TOTMIL-60)AS GASMILE, 60 AS ELEMILE ,EPATMPG FROM
+	(SELECT HOUSEID,VEHID,TDAYDATE,SUM(TRPMILES)AS TOTMIL,MPKWH,EPATMPG  
+	FROM (SELECT HOUSEID,VEHID,TDAYDATE,TRPMILES,(3/33.1*EPATMPG)AS MPKWH,EPATMPG FROM Q3B)T1 GROUP BY HOUSEID,VEHID,TDAYDATE,MPKWH,EPATMPG)T2
+	WHERE TOTMIL>=60))T3
+	UNION
+	(SELECT HOUSEID,VEHID,TDAYDATE,(TOTMIL/MPKWH)AS KWH,0AS GASMILE, TOTMIL AS ELEMILE,EPATMPG  FROM
+	(SELECT HOUSEID,VEHID,TDAYDATE,SUM(TRPMILES)AS TOTMIL,MPKWH,EPATMPG 
+	FROM (SELECT HOUSEID,VEHID,TDAYDATE,TRPMILES,(3/33.1*EPATMPG)AS MPKWH,EPATMPG FROM Q3B)T1 GROUP BY HOUSEID,VEHID,TDAYDATE,MPKWH,EPATMPG)T2
+	WHERE TOTMIL<60 AND TOTMIL>0))AS T4
+	WHERE Q3DCO2.YYYYMM = T4.TDAYDATE)AS T5
+	WHERE T5.TDAYDATE = Q3C.TDAYDATE)AS T6
+	GROUP BY TDAYDATE,TOTCO2)AS T7
+日志:  数据库系统中断；上一次的启动时间是在2016-03-10 18:39:51 PST
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+致命错误:  数据库系统启动中
+  无法发送数据给客户端: 断开的管道
+致命错误:  丢失了到客户端的连接
+日志:  lock file "postmaster.pid" contains wrong PID: 28970 instead of 19451
+日志:  performing immediate shutdown because data directory lock file is invalid
+日志:  接收到立即 (immediate) 停止请求
+警告:  中断联接, 因为其它服务器进程崩溃
+详细信息:  Postmaster 命令此服务器进程回滚当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+警告:  中断联接, 因为其它服务器进程崩溃
+详细信息:  Postmaster 命令此服务器进程回滚当前事物并退出, 因为其它服务器进程不正常的退出可能毁坏了共享内存.
+提示:  一会儿你将可以重联接数据库并且重复你的命令.
+致命错误:  数据库系统启动中
+日志:  数据库系统没有正确的关闭; 处于自动恢复状态中
+日志:  redo 在 0/460B93D8 开始
+日志:  record with zero length at 0/460BFEA8
+日志:  redo 在 0/460BFE78 完成
+日志:  上一次完成事务是在日志时间2016-03-10 18:47:42.942541-08完成的.
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+日志:  接收到快速 (fast) 停止请求
+日志:  中断任何激活事务
+日志:  正在关闭autovacuum启动进程
+日志:  正在关闭
+日志:  数据库系统已关闭
+日志:  数据库上次关闭时间为 2016-03-10 18:48:52 PST
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+错误:  关系 "tmp" 已经存在
+语句:  SELECT YYYYMM, TRANSPORTATION INTO TMP FROM T2 WHERE MSN LIKE 'TEACEUS'
+错误:  表 "q3c" 不存在
+语句:  Drop Table TMP; Drop Table Q3C; Drop Table Q3DCO2;
+错误:  表 "q3dco2" 不存在
+语句:  Drop Table TMP; Drop Table Q3DCO2;
+错误:  字段 "kwh" 不存在 第 433 个字符处
+语句:  SELECT SUM(T8.TOTCO2 - T8.TOTCO2NOW)   FROM (SELECT T7.TDAYDATE, (T7.GASCO2 + T7.ECO2)AS TOTCO2NOW, T7.TOTCO2    FROM (SELECT T6.TDAYDATE, SUM(T6.CO2)AS ECO2, SUM(T6.GCO2*0.008887)AS GASCO2, T6.TOTCO2  FROM (SELECT T5.HOUSEID, T5.VEHID, T5.TDAYDATE, (T5.ELECO2 / Q3C.C * 117538000 * Q3C.DAYS)AS CO2, (T5.GASMILE / T5.EPATMPG / Q3C.C * 117538000 * Q3C.DAYS)AS GCO2, Q3C.TOTCO2   FROM Q3C, (SELECT T4.HOUSEID, T4.VEHID, T4.TDAYDATE, (KWH*Q3DCO2.CO2PKWH)AS ELECO2, T4.GASMILE, T4.ELEMILE, T4.EPATMPG FROM Q3DCO2, (SELECT HOUSEID, VEHID, TDAYDATE, SUM(KWH), SUM(GASMILE)AS GASMILE, SUM(ELEMILE), EPATMPG  FROM (((SELECT HOUSEID, VEHID, TDAYDATE, 0 AS KWH, (TOTMIL)AS GASMILE, 0 AS ELEMILE, EPATMPG FROM (SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES AS TOTMIL, MPKWH, EPATMPG FROM(SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES, (3 / 33.1*EPATMPG)AS MPKWH, EPATMPG FROM Q3B)T1)T2 WHERE TOTMIL >  84)) UNION ALL(SELECT HOUSEID, VEHID, TDAYDATE, (TOTMIL / MPKWH)AS KWH, 0 AS GASMILE, TOTMIL AS ELEMILE, EPATMPG  FROM (SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES AS TOTMIL, MPKWH, EPATMPG FROM(SELECT HOUSEID, VEHID, TDAYDATE, TRPMILES, (3 / 33.1*EPATMPG)AS MPKWH, EPATMPG FROM Q3B)T1)T2 WHERE TOTMIL <  84 AND TOTMIL>0))AS TT4 GROUP BY HOUSEID, VEHID, TDAYDATE, EPATMPG)AS T4 WHERE Q3DCO2.YYYYMM = T4.TDAYDATE)AS T5 WHERE T5.TDAYDATE = Q3C.TDAYDATE)AS T6 GROUP BY TDAYDATE, TOTCO2)AS T7)AS T8 

@@ -1,0 +1,33 @@
+﻿Build started 2015/5/31 17:02:31.
+     1>Project "c:\Users\Ashgu\documents\visual studio 2013\Projects\ecs50hw4\ecs50hw4\ecs50hw4.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\ASH\ASH的学习\ASH Computer Science\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\..\..\Desktop\Homework4\MyFloat.cpp ..\..\..\..\..\Desktop\Homework4\main.cpp
+         main.cpp
+         MyFloat.cpp
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(137): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(141): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(135): error C3861: '__asm__': identifier not found
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(152): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(156): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(149): error C3861: '__asm__': identifier not found
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(166): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(170): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(164): error C3861: '__asm__': identifier not found
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(189): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(193): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(186): error C3861: '__asm__': identifier not found
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(201): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(205): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(198): error C3861: '__asm__': identifier not found
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(212): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(216): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(210): error C3861: '__asm__': identifier not found
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(230): error C2143: syntax error : missing ')' before ':'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(234): error C2059: syntax error : ')'
+     1>c:\users\ashgu\desktop\homework4\myfloat.cpp(223): error C3861: '__asm__': identifier not found
+         Generating Code...
+     1>Done Building Project "c:\Users\Ashgu\documents\visual studio 2013\Projects\ecs50hw4\ecs50hw4\ecs50hw4.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.58

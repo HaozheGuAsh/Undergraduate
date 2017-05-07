@@ -1,0 +1,26 @@
+invalid configuration: X 2 2 2 4
+total of 3 ships
+AircraftCarrier from (0,0) to (0,4)
+Cruiser from (4,4) to (4,6)
+Destroyer from (6,6) to (6,7)
+-----
+name: Cruiser size: 3
+Cruiser from (4,1) to (4,3)
+Cruiser include test 1:  ok
+Cruiser include test 2:  ok
+Cruiser size test:  ok
+Cruiser level test 1: ok
+Cruiser level test 2: ok
+AircraftCarrier from (0,0) to (0,4)
+AircraftCarrier include test 0: ok
+AircraftCarrier include test 1: ok
+AircraftCarrier include test 2: ok
+AircraftCarrier include test 3: ok
+AircraftCarrier include test 4: ok
+Cruiser from (4,4) to (4,6)
+Cruiser include test 0: ok
+Cruiser include test 1: ok
+Cruiser include test 2: ok
+Destroyer from (6,6) to (6,7)
+Destroyer include test 0: ok
+Destroyer include test 1: ok

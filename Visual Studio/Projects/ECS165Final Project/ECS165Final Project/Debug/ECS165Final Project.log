@@ -1,0 +1,118 @@
+﻿Build started 2016/5/31 15:27:00.
+     1>Project "C:\Users\Ashgu\documents\visual studio 2013\Projects\ECS165Final Project\ECS165Final Project\ECS165Final Project.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\ASH\ASH的学习\ASH Computer Science\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "HW6-block.c" "HW6-btree.c" "HW6-datastore.c" "HW6-expression.c" "HW6-optimizer.c" "HW6-parser.c" "HW6-rewriter.c" lex.yy.c y.tab.c
+         y.tab.c
+     1>HW6-sql.y(256): warning C4013: 'printf' undefined; assuming extern returning int
+     1>HW6-sql.y(256): error C2065: 'linenum' : undeclared identifier
+     1>c:\ash\ash的学习\ash computer science\visual studio\vc\include\stdio.h(264): error C2375: 'printf' : redefinition; different linkage
+     1>y.tab.c(488): warning C4013: 'yylex' undefined; assuming extern returning int
+     1>HW6-sql.y(45): error C2065: 'freen' : undeclared identifier
+     1>HW6-sql.y(45): error C2065: 'initfreen' : undeclared identifier
+     1>HW6-sql.y(50): warning C4013: 'print_relation' undefined; assuming extern returning int
+     1>HW6-sql.y(50): warning C4013: 'evalexpr' undefined; assuming extern returning int
+     1>HW6-sql.y(50): warning C4013: 'optimize' undefined; assuming extern returning int
+     1>HW6-sql.y(50): warning C4013: 'compile' undefined; assuming extern returning int
+     1>HW6-sql.y(50): warning C4013: 'makeexpr' undefined; assuming extern returning int
+     1>HW6-sql.y(50): error C2065: 'OP_INSERTROW' : undeclared identifier
+     1>HW6-sql.y(53): error C2065: 'OP_INSERT' : undeclared identifier
+     1>HW6-sql.y(60): error C2065: 'OP_UPDATE' : undeclared identifier
+     1>HW6-sql.y(60): error C2065: 'OP_PROJECTION' : undeclared identifier
+     1>HW6-sql.y(60): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>HW6-sql.y(61): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(61): error C2065: 'OP_AS' : undeclared identifier
+     1>HW6-sql.y(65): error C2065: 'OP_DELETE' : undeclared identifier
+     1>HW6-sql.y(68): error C2065: 'OP_CREATETABLE' : undeclared identifier
+     1>HW6-sql.y(71): error C2065: 'OP_DESCRIBE' : undeclared identifier
+     1>HW6-sql.y(75): error C2065: 'OP_SHOWTABLES' : undeclared identifier
+     1>HW6-sql.y(79): error C2065: 'OP_DROPTABLE' : undeclared identifier
+     1>HW6-sql.y(87): error C2065: 'OP_TABLENAME' : undeclared identifier
+     1>HW6-sql.y(93): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW6-sql.y(105): error C2065: 'OP_IN' : undeclared identifier
+     1>HW6-sql.y(115): error C2065: 'OP_FCALL' : undeclared identifier
+     1>HW6-sql.y(115): error C2065: 'OP_FNAME' : undeclared identifier
+     1>HW6-sql.y(117): error C2065: 'OP_FCALL' : undeclared identifier
+     1>HW6-sql.y(117): error C2065: 'OP_FNAME' : undeclared identifier
+     1>HW6-sql.y(121): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(123): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(128): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW6-sql.y(130): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW6-sql.y(132): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW6-sql.y(137): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>HW6-sql.y(138): error C2065: 'OP_GROUP' : undeclared identifier
+     1>HW6-sql.y(139): error C2065: 'OP_PROJECTION' : undeclared identifier
+     1>HW6-sql.y(140): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>HW6-sql.y(141): error C2065: 'OP_SORT' : undeclared identifier
+     1>HW6-sql.y(159): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(161): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(173): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(175): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(179): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW6-sql.y(179): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW6-sql.y(181): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW6-sql.y(181): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW6-sql.y(183): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW6-sql.y(183): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW6-sql.y(183): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW6-sql.y(185): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW6-sql.y(187): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW6-sql.y(189): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW6-sql.y(189): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW6-sql.y(193): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(195): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(199): error C2065: 'OP_OUTCOLNAME' : undeclared identifier
+     1>HW6-sql.y(201): error C2065: 'OP_OUTCOLNAME' : undeclared identifier
+     1>HW6-sql.y(207): error C2065: 'OP_PRODUCT' : undeclared identifier
+     1>HW6-sql.y(211): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(211): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW6-sql.y(213): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(213): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW6-sql.y(215): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(215): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW6-sql.y(217): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(217): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW6-sql.y(219): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(219): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW6-sql.y(221): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(221): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW6-sql.y(226): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(228): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW6-sql.y(232): error C2065: 'OP_COLUMNDEF' : undeclared identifier
+     1>HW6-sql.y(234): error C2065: 'OP_COLUMNDEF' : undeclared identifier
+     1>HW6-sql.y(234): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW6-sql.y(236): error C2065: 'OP_COLUMNDEF' : undeclared identifier
+     1>HW6-sql.y(236): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW6-sql.y(239): error C2065: 'OP_EQUAL' : undeclared identifier
+     1>HW6-sql.y(240): error C2065: 'OP_NOTEQ' : undeclared identifier
+     1>HW6-sql.y(241): error C2065: 'OP_GT' : undeclared identifier
+     1>HW6-sql.y(242): error C2065: 'OP_LT' : undeclared identifier
+     1>HW6-sql.y(243): error C2065: 'OP_GEQ' : undeclared identifier
+     1>HW6-sql.y(244): error C2065: 'OP_LEQ' : undeclared identifier
+     1>HW6-sql.y(245): error C2065: 'OP_PLUS' : undeclared identifier
+     1>HW6-sql.y(246): error C2065: 'OP_BMINUS' : undeclared identifier
+     1>HW6-sql.y(247): error C2065: 'OP_TIMES' : undeclared identifier
+     1>HW6-sql.y(248): error C2065: 'OP_DIVIDE' : undeclared identifier
+     1>HW6-sql.y(249): error C2065: 'OP_AND' : undeclared identifier
+     1>HW6-sql.y(250): error C2065: 'OP_OR' : undeclared identifier
+         lex.yy.c
+     1>lex.yy.c(488): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-rewriter.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-rewriter.c(5): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-parser.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-parser.c(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-optimizer.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-optimizer.c(8): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-expression.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-expression.c(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-datastore.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-datastore.c(5): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-btree.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-btree.c(8): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-block.c
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165final project\ecs165final project\hw6-block.c(5): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Ashgu\documents\visual studio 2013\Projects\ECS165Final Project\ECS165Final Project\ECS165Final Project.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.83

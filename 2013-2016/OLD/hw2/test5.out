@@ -1,0 +1,27 @@
+total of 3 ships
+BattleShip from (3,2) to (3,5)
+Cruiser from (4,4) to (4,6)
+AircraftCarrier from (1,0) to (1,4)
+-----
+name: Cruiser size: 3
+Cruiser from (4,1) to (4,3)
+Cruiser include test 1:  ok
+Cruiser include test 2:  ok
+Cruiser size test:  ok
+Cruiser level test 1: ok
+Cruiser level test 2: ok
+BattleShip from (3,2) to (3,5)
+BattleShip include test 0: ok
+BattleShip include test 1: ok
+BattleShip include test 2: ok
+BattleShip include test 3: ok
+Cruiser from (4,4) to (4,6)
+Cruiser include test 0: ok
+Cruiser include test 1: ok
+Cruiser include test 2: ok
+AircraftCarrier from (1,0) to (1,4)
+AircraftCarrier include test 0: ok
+AircraftCarrier include test 1: ok
+AircraftCarrier include test 2: ok
+AircraftCarrier include test 3: ok
+AircraftCarrier include test 4: ok

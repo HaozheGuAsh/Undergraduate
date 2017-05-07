@@ -1,0 +1,34 @@
+invalid configuration: A 1 0 0 4
+total of 5 ships
+BattleShip from (2,2) to (2,5)
+Cruiser from (4,4) to (4,6)
+Cruiser from (9,9) to (9,7)
+Destroyer from (6,6) to (6,7)
+Destroyer from (8,8) to (8,9)
+-----
+name: Cruiser size: 3
+Cruiser from (4,1) to (4,3)
+Cruiser include test 1:  ok
+Cruiser include test 2:  ok
+Cruiser size test:  ok
+Cruiser level test 1: ok
+Cruiser level test 2: ok
+BattleShip from (2,2) to (2,5)
+BattleShip include test 0: ok
+BattleShip include test 1: ok
+BattleShip include test 2: ok
+BattleShip include test 3: ok
+Cruiser from (4,4) to (4,6)
+Cruiser include test 0: ok
+Cruiser include test 1: ok
+Cruiser include test 2: ok
+Cruiser from (9,9) to (9,7)
+Cruiser include test 0: ok
+Cruiser include test 1: ok
+Cruiser include test 2: ok
+Destroyer from (6,6) to (6,7)
+Destroyer include test 0: ok
+Destroyer include test 1: ok
+Destroyer from (8,8) to (8,9)
+Destroyer include test 0: ok
+Destroyer include test 1: ok

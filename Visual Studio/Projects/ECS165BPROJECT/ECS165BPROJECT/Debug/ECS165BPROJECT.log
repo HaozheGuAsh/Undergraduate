@@ -1,0 +1,121 @@
+﻿Build started 2016/5/22 18:37:35.
+     1>Project "C:\Users\Ashgu\documents\visual studio 2013\Projects\ECS165BPROJECT\ECS165BPROJECT\ECS165BPROJECT.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\ASH\ASH的学习\ASH Computer Science\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "HW6-sql.tab.cpp" "HW6-testparser.cpp" expression.cpp lex.yy.cc rewriter.cpp
+         rewriter.cpp
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\rewriter.cpp(7): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         lex.yy.cc
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\lex.yy.cc(322): fatal error C1083: Cannot open include file: 'FlexLexer.h': No such file or directory
+         expression.cpp
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\expression.cpp(1): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-testparser.cpp
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-testparser.cpp(13): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW6-sql.tab.cpp
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.tab.cpp(1278): error C3861: 'yylex': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(45): error C2065: 'freen' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(45): error C2065: 'initfreen' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(50): error C2065: 'OP_INSERTROW' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(50): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(50): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(50): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(50): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(50): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(53): error C2065: 'OP_INSERT' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(53): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(53): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(53): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(53): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(53): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(56): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(56): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(56): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(56): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(60): error C2065: 'OP_UPDATE' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(60): error C2065: 'OP_PROJECTION' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(60): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(61): error C2065: 'OP_RLIST' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(61): error C2065: 'OP_AS' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(59): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(59): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(59): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(59): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(60): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(61): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(65): error C2065: 'OP_DELETE' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(65): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(65): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(65): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(65): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(65): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(68): error C2065: 'OP_CREATETABLE' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(68): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(68): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(68): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(68): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(68): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(71): error C2065: 'OP_DESCRIBE' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(71): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(71): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(71): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(71): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(71): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(75): error C2065: 'OP_SHOWTABLES' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(75): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(75): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(75): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(75): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(75): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(79): error C2065: 'OP_DROPTABLE' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(79): error C3861: 'print_relation': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(79): error C3861: 'evalexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(79): error C3861: 'optimize': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(79): error C3861: 'compile': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(79): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(87): error C2065: 'OP_TABLENAME' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(87): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(93): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(93): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(99): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(101): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(103): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(105): error C2065: 'OP_IN' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(105): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(115): error C2065: 'OP_FCALL' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(115): error C2065: 'OP_FNAME' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(115): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(117): error C2065: 'OP_FCALL' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(117): error C2065: 'OP_FNAME' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(117): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(121): error C2065: 'OP_RLIST' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(121): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(123): error C2065: 'OP_RLIST' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(123): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(128): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(128): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(130): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(130): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(132): error C2065: 'OP_STRING' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(132): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(137): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(137): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(138): error C2065: 'OP_GROUP' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(138): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(139): error C2065: 'OP_PROJECTION' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(139): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(140): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(140): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(141): error C2065: 'OP_SORT' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(141): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(159): error C2065: 'OP_RLIST' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(159): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(161): error C2065: 'OP_RLIST' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(161): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(173): error C2065: 'OP_RLIST' : undeclared identifier
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(173): error C3861: 'makeexpr': identifier not found
+     1>c:\users\ashgu\documents\visual studio 2013\projects\ecs165bproject\ecs165bproject\hw6-sql.ypp(173): fatal error C1003: error count exceeds 100; stopping compilation
+         Generating Code...
+     1>Done Building Project "C:\Users\Ashgu\documents\visual studio 2013\Projects\ECS165BPROJECT\ECS165BPROJECT\ECS165BPROJECT.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.35

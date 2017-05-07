@@ -1,0 +1,1 @@
+/usr/bin/postgres "-c" "listen_addresses=" "-c" "unix_socket_directories=/home/haozhe26/postgres"

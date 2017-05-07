@@ -1,0 +1,103 @@
+﻿Build started 2016/4/20 22:18:13.
+     1>Project "C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\University Project\ECS165B HW4\ECS165B HW4\ECS165B HW4.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\ASH\ASH的学习\ASH Computer Science\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt "..\..\..\..\..\..\Desktop\HW4-testparser.c" ..\..\..\..\..\..\Desktop\lex.yy.c ..\..\..\..\..\..\Desktop\y.tab.c
+         y.tab.c
+     1>HW4-sql.y(246): warning C4013: 'printf' undefined; assuming extern returning int
+     1>HW4-sql.y(246): error C2065: 'linenum' : undeclared identifier
+     1>c:\ash\ash的学习\ash computer science\visual studio\vc\include\stdio.h(264): error C2375: 'printf' : redefinition; different linkage
+     1>y.tab.c(483): warning C4013: 'yylex' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'evalexpr' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'optimize' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'compile' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'makeexpr' undefined; assuming extern returning int
+     1>HW4-sql.y(46): error C2065: 'OP_INSERTROW' : undeclared identifier
+     1>HW4-sql.y(52): warning C4013: 'print_relation' undefined; assuming extern returning int
+     1>HW4-sql.y(61): error C2065: 'OP_CREATETABLE' : undeclared identifier
+     1>HW4-sql.y(80): error C2065: 'OP_TABLENAME' : undeclared identifier
+     1>HW4-sql.y(86): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW4-sql.y(106): error C2065: 'OP_FCALL' : undeclared identifier
+     1>HW4-sql.y(106): error C2065: 'OP_FNAME' : undeclared identifier
+     1>HW4-sql.y(108): error C2065: 'OP_FCALL' : undeclared identifier
+     1>HW4-sql.y(108): error C2065: 'OP_FNAME' : undeclared identifier
+     1>HW4-sql.y(112): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(114): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(119): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW4-sql.y(121): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW4-sql.y(123): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW4-sql.y(128): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>HW4-sql.y(129): error C2065: 'OP_GROUP' : undeclared identifier
+     1>HW4-sql.y(130): error C2065: 'OP_PROJECTION' : undeclared identifier
+     1>HW4-sql.y(131): error C2065: 'OP_SELECTION' : undeclared identifier
+     1>HW4-sql.y(132): error C2065: 'OP_SORT' : undeclared identifier
+     1>HW4-sql.y(150): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(152): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(164): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(166): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(170): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW4-sql.y(170): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW4-sql.y(172): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW4-sql.y(172): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW4-sql.y(174): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW4-sql.y(174): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW4-sql.y(174): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW4-sql.y(176): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW4-sql.y(176): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW4-sql.y(178): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW4-sql.y(178): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW4-sql.y(180): error C2065: 'OP_SORTSPEC' : undeclared identifier
+     1>HW4-sql.y(180): error C2065: 'OP_COLNAME' : undeclared identifier
+     1>HW4-sql.y(180): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW4-sql.y(184): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(186): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(190): error C2065: 'OP_OUTCOLNAME' : undeclared identifier
+     1>HW4-sql.y(192): error C2065: 'OP_OUTCOLNAME' : undeclared identifier
+     1>HW4-sql.y(198): error C2065: 'OP_PRODUCT' : undeclared identifier
+     1>HW4-sql.y(202): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(202): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW4-sql.y(204): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(204): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW4-sql.y(206): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(206): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW4-sql.y(208): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(208): error C2065: 'OP_NUMBER' : undeclared identifier
+     1>HW4-sql.y(210): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(210): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW4-sql.y(212): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(212): error C2065: 'OP_NULL' : undeclared identifier
+     1>HW4-sql.y(216): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(218): error C2065: 'OP_RLIST' : undeclared identifier
+     1>HW4-sql.y(222): error C2065: 'OP_COLUMNDEF' : undeclared identifier
+     1>HW4-sql.y(224): error C2065: 'OP_COLUMNDEF' : undeclared identifier
+     1>HW4-sql.y(224): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW4-sql.y(226): error C2065: 'OP_COLUMNDEF' : undeclared identifier
+     1>HW4-sql.y(226): error C2065: 'OP_STRING' : undeclared identifier
+     1>HW4-sql.y(229): error C2065: 'OP_EQUAL' : undeclared identifier
+     1>HW4-sql.y(230): error C2065: 'OP_NOTEQ' : undeclared identifier
+     1>HW4-sql.y(231): error C2065: 'OP_GT' : undeclared identifier
+     1>HW4-sql.y(232): error C2065: 'OP_LT' : undeclared identifier
+     1>HW4-sql.y(233): error C2065: 'OP_GEQ' : undeclared identifier
+     1>HW4-sql.y(234): error C2065: 'OP_LEQ' : undeclared identifier
+     1>HW4-sql.y(235): error C2065: 'OP_PLUS' : undeclared identifier
+     1>HW4-sql.y(236): error C2065: 'OP_BMINUS' : undeclared identifier
+     1>HW4-sql.y(237): error C2065: 'OP_TIMES' : undeclared identifier
+     1>HW4-sql.y(238): error C2065: 'OP_DIVIDE' : undeclared identifier
+     1>HW4-sql.y(239): error C2065: 'OP_AND' : undeclared identifier
+     1>HW4-sql.y(240): error C2065: 'OP_OR' : undeclared identifier
+         lex.yy.c
+     1>lex.yy.c(473): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         HW4-testparser.c
+     1>y.tab.c(456): error C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\ash\ash的学习\ash computer science\visual studio\vc\include\stdlib.h(462) : see declaration of 'getenv'
+     1>y.tab.c(483): warning C4013: 'yylex' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'evalexpr' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'optimize' undefined; assuming extern returning int
+     1>HW4-sql.y(46): warning C4013: 'compile' undefined; assuming extern returning int
+     1>HW4-sql.y(52): warning C4013: 'print_relation' undefined; assuming extern returning int
+     1>lex.yy.c(473): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         Generating Code...
+     1>Done Building Project "C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\University Project\ECS165B HW4\ECS165B HW4\ECS165B HW4.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.23

@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ASH", "ASH\ASH.vcxproj", "{66D39793-A1B1-4F29-AC61-601634B9BD98}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ashgu", "..\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj", "{17A1F600-4682-42D2-AA21-9DBCDE96A554}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66D39793-A1B1-4F29-AC61-601634B9BD98}.Debug|Win32.ActiveCfg = Debug|Win32
+		{66D39793-A1B1-4F29-AC61-601634B9BD98}.Debug|Win32.Build.0 = Debug|Win32
+		{66D39793-A1B1-4F29-AC61-601634B9BD98}.Release|Win32.ActiveCfg = Release|Win32
+		{66D39793-A1B1-4F29-AC61-601634B9BD98}.Release|Win32.Build.0 = Release|Win32
+		{17A1F600-4682-42D2-AA21-9DBCDE96A554}.Debug|Win32.ActiveCfg = Debug|Win32
+		{17A1F600-4682-42D2-AA21-9DBCDE96A554}.Debug|Win32.Build.0 = Debug|Win32
+		{17A1F600-4682-42D2-AA21-9DBCDE96A554}.Release|Win32.ActiveCfg = Release|Win32
+		{17A1F600-4682-42D2-AA21-9DBCDE96A554}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

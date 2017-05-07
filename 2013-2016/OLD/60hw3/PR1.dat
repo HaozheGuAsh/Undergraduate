@@ -1,0 +1,2 @@
+Has a series of 20 insertions in order from 0 to 19 followed by 5 deletions 15 to 20, followed by 5 range requests
+i0 i1 i2 i3 i4 i5 i6 i7 i8 i9 i10 i11 i12 i13 i14 i15 i16 i17 i18 i19 d19 d18 d17 d16 d15 r7 8 r6 9 r5 10 r4 11 r3 12 

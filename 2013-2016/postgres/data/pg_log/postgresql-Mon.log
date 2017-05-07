@@ -1,0 +1,1122 @@
+日志:  数据库上次关闭时间为 2016-02-29 22:10:13 PST
+日志:  MultiXact member wraparound protections are now enabled
+日志:  数据库系统准备接受连接
+日志:  已启动autovacuum
+错误:  语法错误 在 "SELECT" 或附近的 第 311 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+	/g
+	/g
+	SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+	/g
+	CREATE TABLE Product(maker CHAR(10), model CHAR(10), type CHAR(64));
+错误:  关系 "car" 已经存在
+语句:  CREATE TABLE Car(model CHAR(10), city INT, highway INT, price INT);
+错误:  关系 "pickup" 已经存在
+语句:  CREATE TABLE Pickup(model CHAR(64), city INT, highway INT, cargo INT, price INT);
+错误:  关系 "ev" 已经存在
+语句:  CREATE TABLE EV(model CHAR(64), range INT, battery INT, price INT);
+错误:  字段 "city" 不存在 第 141 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+错误:  语法错误 在 "SELECT" 或附近的 第 309 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+	/g
+	SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+	/g
+	sdf
+	CREATE TABLE Product(maker CHAR(10), model CHAR(10), type CHAR(64));
+错误:  关系 "car" 已经存在
+语句:  CREATE TABLE Car(model CHAR(10), city INT, highway INT, price INT);
+错误:  关系 "pickup" 已经存在
+语句:  CREATE TABLE Pickup(model CHAR(64), city INT, highway INT, cargo INT, price INT);
+错误:  关系 "ev" 已经存在
+语句:  CREATE TABLE EV(model CHAR(64), range INT, battery INT, price INT);
+错误:  关系 "pickupmaker" 不存在 第 265 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+	/g
+错误:  关系 "pickupmaker" 不存在 第 265 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+错误:  关系 "product" 已经存在
+语句:  CREATE TABLE Product(maker CHAR(10), model CHAR(10), type CHAR(64));
+错误:  关系 "car" 已经存在
+语句:  CREATE TABLE Car(model CHAR(10), city INT, highway INT, price INT);
+错误:  关系 "pickup" 已经存在
+语句:  CREATE TABLE Pickup(model CHAR(64), city INT, highway INT, cargo INT, price INT);
+错误:  关系 "ev" 已经存在
+语句:  CREATE TABLE EV(model CHAR(64), range INT, battery INT, price INT);
+错误:  语法错误 在 ".1" 或附近的 第 342 个字符处
+语句:  SELECT M1.maker maker
+	FROM (SELECT * FROM (SELECT model,price
+	FROM Car
+	UNION
+	SELECT model,price
+	FROM Pickup
+	UNION
+	SELECT model,price
+	FROM EV)m1 NATURAL JOIN Product)M1,
+	(SELECT * FROM (SELECT model,price
+	FROM Car
+	UNION
+	SELECT model,price
+	FROM Pickup
+	UNION
+	SELECT model,price
+	FROM EV)m2 NATURAL JOIN Product)M2
+	WHERE M1.model = M2.model AND M.1price <25000 AND M2.price >60000
+错误:  语法错误 在 "UNION" 或附近的 第 123 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker,
+	((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker1,
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在 "UNION" 或附近的 第 118 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM ((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker1,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker2
+	WHERE Allmaker.maker=Allmaker1.maker AND 
+	Allmaker.maker=Allmaker2.maker AND
+	Allmaker.highway <> Allmaker1.highway AND
+	Allmaker1.highway<> Allmaker2.highway AND
+	Allmaker.highway <> Allmaker2.highway
+错误:  关系 "product" 已经存在
+语句:  CREATE TABLE Product(maker CHAR(10), model CHAR(10), type CHAR(64));
+错误:  关系 "car" 已经存在
+语句:  CREATE TABLE Car(model CHAR(10), city INT, highway INT, price INT);
+错误:  关系 "pickup" 已经存在
+语句:  CREATE TABLE Pickup(model CHAR(64), city INT, highway INT, cargo INT, price INT);
+错误:  关系 "ev" 已经存在
+语句:  CREATE TABLE EV(model CHAR(64), range INT, battery INT, price INT);
+错误:  关系 "pickupmaker" 不存在 第 265 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+错误:  关系 "pickupmaker" 不存在 第 265 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker as p
+	WHERE carmaker.maker= maker)
+错误:  关系 "pickupmaker" 不存在 第 266 个字符处
+语句:  SELECT carmaker.maker maker
+	FROM (SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker,
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product) pickupmaker
+	WHERE carmaker.highway > ANY
+	(SELECT highway FROM pickupmaker
+	WHERE carmaker.maker= maker)
+错误:  语法错误 在 "UNION" 或附近的 第 118 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM ((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker1,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker2
+	WHERE Allmaker.maker=Allmaker1.maker AND 
+	Allmaker.maker=Allmaker2.maker AND
+	Allmaker.highway <> Allmaker1.highway AND
+	Allmaker1.highway<> Allmaker2.highway AND
+	Allmaker.highway <> Allmaker2.highway
+错误:  语法错误 在 "WHERE" 或附近的 第 404 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker,
+	((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker1,
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  字段 "city" 不存在 第 144 个字符处
+提示:  表"*SELECT* 1"中存在一列,名为"city", 但是这个表名并不能从这部分查询里引用.
+语句:  SELECT Allmaker.maker maker
+	FROM((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker,
+	((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  字段 "city" 不存在 第 143 个字符处
+提示:  表"*SELECT* 1"中存在一列,名为"city", 但是这个表名并不能从这部分查询里引用.
+语句:  SELECT Allmaker.maker maker
+	FROM((SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker,
+	((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  字段 "city" 不存在 第 143 个字符处
+提示:  表"*SELECT* 1"中存在一列,名为"city", 但是这个表名并不能从这部分查询里引用.
+语句:  SELECT Allmaker.maker maker
+	FROM((SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker,
+	((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在输入的末尾 第 80 个字符处
+语句:  ((SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product)
+错误:  语法错误 在 "Allmaker" 或附近的 第 175 个字符处
+语句:  ((SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker
+错误:  语法错误 在 "Allmaker" 或附近的 第 175 个字符处
+语句:  ((SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+	) Allmaker
+错误:  字段 "city" 不存在 第 110 个字符处
+提示:  表"*SELECT* 1"中存在一列,名为"city", 但是这个表名并不能从这部分查询里引用.
+语句:  (SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+错误:  语法错误 在 "car" 或附近的 第 40 个字符处
+语句:  (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+错误:  语法错误 在 ")" 或附近的 第 77 个字符处
+语句:  SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+错误:  字段 "city" 不存在 第 110 个字符处
+提示:  表"*SELECT* 1"中存在一列,名为"city", 但是这个表名并不能从这部分查询里引用.
+语句:  (SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product)
+错误:  字段 "city" 不存在 第 23 个字符处
+语句:  SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product
+错误:  字段 "city" 不存在 第 23 个字符处
+语句:  SELECT * FROM (SELECT city, highway, model
+	FROMPickup) pickup NATURAL JOIN Product
+错误:  语法错误 在输入的末尾 第 171 个字符处
+语句:  (SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product
+错误:  关系 "allmaker1" 不存在 第 527 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM( (SELECT* FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)
+	) Allmaker,
+	((SELECT * FROM (SELECT city, highway, model
+	FROM Car) car NATURAL JOIN Product) 
+	UNION
+	(SELECT * FROM (SELECT city, highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在 "UNION" 或附近的 第 118 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM ((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker1,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROMPickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker2
+	WHERE Allmaker.maker=Allmaker1.maker AND 
+	Allmaker.maker=Allmaker2.maker AND
+	Allmaker.highway <> Allmaker1.highway AND
+	Allmaker1.highway<> Allmaker2.highway AND
+	Allmaker.highway <> Allmaker2.highway
+错误:  语法错误 在 "UNION" 或附近的 第 118 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM ((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker1,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROM Pickup) pickup NATURAL JOIN Product)pickupmaker
+	) Allmaker2
+	WHERE Allmaker.maker=Allmaker1.maker AND 
+	Allmaker.maker=Allmaker2.maker AND
+	Allmaker.highway <> Allmaker1.highway AND
+	Allmaker1.highway<> Allmaker2.highway AND
+	Allmaker.highway <> Allmaker2.highway
+错误:  语法错误 在 "UNION" 或附近的 第 118 个字符处
+语句:  SELECT Allmaker.maker maker
+	FROM ((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROM Pickup) pickup NATURAL JOIN Product) pickupmaker
+	) Allmaker,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROM Pickup) pickup NATURAL JOIN Product) pickupmaker
+	) Allmaker1,
+	((SELECT * FROM (SELECT highway, model
+	FROM Car) car NATURAL JOIN Product) carmaker
+	UNION
+	(SELECT * FROM (SELECT highway, model
+	FROM Pickup) pickup NATURAL JOIN Product) pickupmaker
+	) Allmaker2
+	WHERE Allmaker.maker=Allmaker1.maker AND 
+	Allmaker.maker=Allmaker2.maker AND
+	Allmaker.highway <> Allmaker1.highway AND
+	Allmaker1.highway<> Allmaker2.highway AND
+	Allmaker.highway <> Allmaker2.highway
+错误:  语法错误 在 "Allmaker" 或附近的 第 56 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker,
+	((SELECT city, highway, model
+	FROM Car) 
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker1,
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在 "Allmaker" 或附近的 第 56 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker,
+	((SELECT city, highway, model
+	FROM Car) 
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 182 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	,Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker,
+	((SELECT city, highway, model
+	FROM Car) 
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)bestconcar
+	(SELECT
+	FROM (SELECT model, battery, range FROM EV)ev1,
+	  (SELECT model, battery, range FROM EV)ev2
+错误:  语法错误 在 "," 或附近的 第 182 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	,Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker,
+	((SELECT city, highway, model
+	FROM Car) 
+	UNION
+	(SELECT city, highway, model
+	FROMPickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 183 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	,Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	(( SELECT city, highway, model
+	FROM Car) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在输入的末尾 第 88 个字符处
+语句:  ((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+错误:  语法错误 在 ")" 或附近的 第 37 个字符处
+语句:  SELECT city, highway, model
+	FROM Car) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+错误:  语法错误 在 "," 或附近的 第 183 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	,Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+错误:  语法错误 在 "," 或附近的 第 184 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	, Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+错误:  语法错误 在 "," 或附近的 第 185 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	, Allmaker.model as model
+	FROM((SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker ,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+错误:  语法错误 在输入的末尾 第 87 个字符处
+语句:  (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+错误:  语法错误 在 "Allmaker" 或附近的 第 92 个字符处
+语句:  ( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)
+	( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)
+	( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)
+错误:  语法错误 在 "Allmaker" 或附近的 第 92 个字符处
+语句:  ( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)
+错误:  语法错误 在 "Allmaker" 或附近的 第 92 个字符处
+语句:  ( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)
+错误:  语法错误 在 "," 或附近的 第 186 个字符处
+语句:  (SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG
+	, Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+	)
+错误:  语法错误 在 "," 或附近的 第 185 个字符处
+语句:  (SELECT 
+	Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 184 个字符处
+语句:  SELECT 
+	Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45   + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 183 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1)
+错误:  语法错误 在输入的末尾 第 87 个字符处
+语句:  (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+错误:  语法错误 在 "," 或附近的 第 183 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 183 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 183 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 184 个字符处
+语句:  (SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG,Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1)
+错误:  语法错误 在 "," 或附近的 第 184 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG, Allmaker.model as model
+	FROM( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+错误:  语法错误 在输入的末尾 第 87 个字符处
+语句:  (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+错误:  语法错误 在 "Allmaker" 或附近的 第 92 个字符处
+语句:  ( (SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1)
+错误:  语法错误 在 ")" 或附近的 第 38 个字符处
+语句:  SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+错误:  语法错误 在 "," 或附近的 第 185 个字符处
+语句:  SELECT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG, Allmaker.model as model
+	FROM( 
+	(SELECT city, highway, model
+	FROM Car
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1 )
+错误:  FROM 中的子查询必须有一个别名 第 29 个字符处
+提示:  例如, FROM (SELECT ...) [AS] foo.
+语句:  SELECT DISTINCT model
+	FROM  (SELECT DISTINCT Allmaker.highway*0.45+Allmaker.city*0.55 as MPG, Allmaker.model as model
+	FROM
+	((SELECT city, highway, model
+	FROM Car)
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker,
+	( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) 
+	) Allmaker1
+	WHERE Allmaker.highway*0.45+Allmaker.city*0.55 >= ALL 
+	(SELECT Allmaker1.highway*0.45 + Allmaker1.city*0.55 as MPG FROM ( ( SELECT city, highway, model
+	FROM Car ) 
+	UNION
+	(SELECT city, highway, model
+	FROM Pickup) ) Allmaker1 )
+	)
+错误:  语法错误 在 "   SELECT" 或附近的 第 1 个字符处
+语句:     SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	       WHERE mpgge >= ALL (SELECT mpgge 
+	                                                          FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	                                              FROM Car)
+	        UNION
+	                     (SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                             (SELECT model,(battery/range)*33.1 AS mpgge
+	                                                                        FROM EV)) Auto)
+错误:  语法错误 在 "   SELECT" 或附近的 第 1 个字符处
+语句:     SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	       WHERE mpgge >= ALL (SELECT mpgge 
+	                                                          FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	                                              FROM Car)
+	        UNION
+	                     (SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                             (SELECT model,(battery/range)*33.1 AS mpgge
+	                                                                        FROM EV)) Auto)
+错误:  语法错误 在 "(" 或附近的 第 21 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	       WHERE mpgge >= ALL (SELECT mpgge 
+	                                                          FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	                                              FROM Car)
+	        UNION
+	                     (SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                             (SELECT model,(battery/range)*33.1 AS mpgge
+	                                                                        FROM EV)) Auto)
+错误:  语法错误 在 "SELECTmodel" 或附近的 第 511 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM((SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECTmodel,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  语法错误 在 "SELECTmodel" 或附近的 第 512 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECTmodel,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  字段 "battery" 不存在 第 526 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  字段 "battery" 不存在 第 528 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,( battery /range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  字段 "battery" 不存在 第 528 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,( battery /range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  字段 "battery" 不存在 第 528 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,( battery /range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  语法错误 在 "CREATE" 或附近的 第 18 个字符处
+语句:  SELECT * FROM EV
+	CREATE TABLE EV("asdf", 200, 20, 100);
+错误:  字段 "asdf" 不存在 第 23 个字符处
+语句:  INSERT INTO EV VALUES("asdf", 200, 20, 100);
+错误:  字段 "as" 不存在 第 23 个字符处
+语句:  INSERT INTO EV VALUES("as", 200, 20, 100);
+错误:  语法错误 在 "SELECT" 或附近的 第 18 个字符处
+语句:  SELECT * FROM EV
+	SELECT model,( battery /range)*33.1 AS mpgge
+	    FROM EV
+错误:  字段 "battery" 不存在 第 528 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpgge
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpgge
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,( battery /range)*33.1 AS mpgge
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpgge FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpgge
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpggeFROMEV))Auto)
+错误:  字段 "mpgge" 不存在 第 250 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpg
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpg
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpg
+	    FROM EV)) Auto
+	WHERE mpgge >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpg FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpg
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpg FROM EV))Auto)
+错误:  字段 "mpgge" 不存在 第 248 个字符处
+语句:  SELECT model
+	  FROM ((SELECT model, city*0.55+highway*0.45 AS mpg
+	  FROM Car)
+	  UNION
+	  (SELECT model, city*0.55+highway*0.45 AS mpg
+	   FROM Pickup)
+	   UNION
+	   (SELECT model,(battery/range)*33.1 AS mpg
+	    FROM EV)) Auto
+	WHERE mpg >= ALL (SELECT mpgge 
+	FROM(( SELECT model, city*0.55+highway*0.45 AS mpg FROM Car)
+	        UNION
+	(SELECT model, city*0.55+highway*0.45 AS mpg
+	                      FROM Pickup)
+	                                              UNION
+	                                     (SELECT model,(battery/range)*33.1 AS mpg FROM EV))Auto)

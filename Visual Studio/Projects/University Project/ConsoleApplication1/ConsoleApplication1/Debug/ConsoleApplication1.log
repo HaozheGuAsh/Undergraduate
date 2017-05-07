@@ -1,0 +1,31 @@
+﻿生成启动时间为 2015/3/14 14:18:34。
+     1>项目“c:\Users\Ashgu\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         C:\ASH\ASH的学习\ASH Computer Science\Visual Studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\..\..\Desktop\60hw5\ProjectRunner.cpp ..\..\..\..\..\Desktop\60hw5\QueueAr.cpp ..\..\..\..\..\Desktop\60hw5\scheduler.cpp
+         scheduler.cpp
+         QueueAr.cpp
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(10): error C2995: “Queue<Object>::Queue(int)”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(25) : 参见“Queue<Object>::Queue”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(20): error C2995: “bool Queue<Object>::isEmpty(void) const”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(27) : 参见“Queue<Object>::isEmpty”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(30): error C2995: “bool Queue<Object>::isFull(void) const”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(28) : 参见“Queue<Object>::isFull”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(41): error C2995: “void Queue<Object>::makeEmpty(void)”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(31) : 参见“Queue<Object>::makeEmpty”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(54): error C2995: “const Object &Queue<Object>::getFront(void) const”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(29) : 参见“Queue<Object>::getFront”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(70): error C2995: “Object Queue<Object>::dequeue(void)”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(32) : 参见“Queue<Object>::dequeue”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(84): error C2995: “void Queue<Object>::enqueue(const Object &)”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(33) : 参见“Queue<Object>::enqueue”的声明
+     1>c:\users\ashgu\desktop\60hw5\queuear.cpp(94): error C2995: “void Queue<Object>::increment(int &)”: 函数模板已经定义
+                 c:\users\ashgu\desktop\60hw5\queuear.h(41) : 参见“Queue<Object>::increment”的声明
+         ProjectRunner.cpp
+     1>c:\users\ashgu\desktop\60hw5\projectrunner.cpp(100): error C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\ash\ash的学习\ash computer science\visual studio\vc\include\string.h(204) : 参见“strtok”的声明
+         正在生成代码...
+     1>已完成生成项目“c:\Users\Ashgu\documents\visual studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:01.19

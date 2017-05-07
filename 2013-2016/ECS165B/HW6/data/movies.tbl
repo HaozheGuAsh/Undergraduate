@@ -1,0 +1,501 @@
+year	title	id
+1994	'The Shawshank Redemption'	1	                              
+1972	'The Godfather'	2	                              
+1974	'The Godfather: Part II'	3	                              
+2008	'The Dark Knight'	4	                              
+1993	'Schindler s List'	5	                              
+1957	'12 Angry Men'	6	                              
+1994	'Pulp Fiction'	7	                              
+2003	'The Lord of the Rings: The Return of the King'	8	                              
+1966	'The Good, the Bad and the Ugly'	9	                              
+1999	'Fight Club'	10	                              
+2001	'The Lord of the Rings: The Fellowship of the Ring'	11	                              
+1980	'Star Wars: Episode V - The Empire Strikes Back'	12	                              
+1994	'Forrest Gump'	13	                              
+2010	'Inception'	14	                              
+2002	'The Lord of the Rings: The Two Towers'	15	                              
+1975	'One Flew Over the Cuckoo s Nest'	16	                              
+1990	'Goodfellas'	17	                              
+1999	'The Matrix'	18	                              
+1954	'Seven Samurai'	19	                              
+1977	'Star Wars: Episode IV - A New Hope'	20	                              
+2002	'City of God'	21	                              
+1995	'Se7en'	22	                              
+1991	'The Silence of the Lambs'	23	                              
+1946	'It s a Wonderful Life'	24	                              
+1995	'The Usual Suspects'	25	                              
+1997	'Life Is Beautiful'	26	                              
+1994	'Léon: The Professional'	27	                              
+1968	'Once Upon a Time in the West'	28	                              
+2001	'Spirited Away'	29	                              
+1998	'Saving Private Ryan'	30	                              
+1998	'American History X'	31	                              
+2014	'Interstellar'	32	                              
+1942	'Casablanca'	33	                              
+1960	'Psycho'	34	                              
+1931	'City Lights'	35	                              
+1981	'Raiders of the Lost Ark'	36	                              
+2011	'The Intouchables'	37	                              
+1954	'Rear Window'	38	                              
+1936	'Modern Times'	39	                              
+1999	'The Green Mile'	40	                              
+1991	'Terminator 2: Judgment Day'	41	                              
+2002	'The Pianist'	42	                              
+2006	'The Departed'	43	                              
+1985	'Back to the Future'	44	                              
+2014	'Whiplash'	45	                              
+2000	'Gladiator'	46	                              
+2000	'Memento'	47	                              
+1979	'Apocalypse Now'	48	                              
+2006	'The Prestige'	49	                              
+1964	'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'	50	                              
+1994	'The Lion King'	51	                              
+1950	'Sunset Boulevard'	52	                              
+1979	'Alien'	53	                              
+1940	'The Great Dictator'	54	                              
+2006	'The Lives of Others'	55	                              
+1988	'Cinema Paradiso'	56	                              
+2012	'Django Unchained'	57	                              
+1980	'The Shining'	58	                              
+1957	'Paths of Glory'	59	                              
+1988	'Grave of the Fireflies'	60	                              
+2008	'WALL·E'	61	                              
+2012	'The Dark Knight Rises'	62	                              
+1999	'American Beauty'	63	                              
+2016	'Captain America: Civil War'	64	                              
+1986	'Aliens'	65	                              
+1997	'Princess Mononoke'	66	                              
+2003	'Oldboy'	67	                              
+1941	'Citizen Kane'	68	                              
+1959	'North by Northwest'	69	                              
+1984	'Once Upon a Time in America'	70	                              
+1981	'Das Boot'	71	                              
+1958	'Vertigo'	72	                              
+1957	'Witness for the Prosecution'	73	                              
+1983	'Star Wars: Episode VI - Return of the Jedi'	74	                              
+1931	'M'	75	                              
+1992	'Reservoir Dogs'	76	                              
+2001	'Amélie'	77	                              
+1995	'Braveheart'	78	                              
+2000	'Requiem for a Dream'	79	                              
+1971	'A Clockwork Orange'	80	                              
+1976	'Taxi Driver'	81	                              
+1944	'Double Indemnity'	82	                              
+2010	'Toy Story 3'	83	                              
+1962	'Lawrence of Arabia'	84	                              
+1962	'To Kill a Mockingbird'	85	                              
+2004	'Eternal Sunshine of the Spotless Mind'	86	                              
+1987	'Full Metal Jacket'	87	                              
+1984	'Amadeus'	88	                              
+1973	'The Sting'	89	                              
+1968	'2001: A Space Odyssey'	90	                              
+1948	'Bicycle Thieves'	91	                              
+1952	'Singin  in the Rain'	92	                              
+2000	'Snatch.'	93	                              
+1995	'Toy Story'	94	                              
+1975	'Monty Python and the Holy Grail'	95	                              
+2009	'Inglourious Basterds'	96	                              
+1921	'The Kid'	97	                              
+1997	'L.A. Confidential'	98	                              
+1965	'For a Few Dollars More'	99	                              
+1950	'Rashomon'	100	                              
+1960	'The Apartment'	101	                              
+1989	'Indiana Jones and the Last Crusade'	102	                              
+1983	'Scarface'	103	                              
+2011	'A Separation'	104	                              
+1950	'All About Eve'	105	                              
+1927	'Metropolis'	106	                              
+1961	'Yojimbo'	107	                              
+1948	'The Treasure of the Sierra Madre'	108	                              
+2005	'Batman Begins'	109	                              
+2012	'The Hunt'	110	                              
+1959	'Some Like It Hot'	111	                              
+2009	'3 Idiots'	112	                              
+1992	'Unforgiven'	113	                              
+2009	'Up'	114	                              
+1997	'Good Will Hunting'	115	                              
+1949	'The Third Man'	116	                              
+2015	'Inside Out'	117	                              
+1980	'Raging Bull'	118	                              
+2004	'Downfall'	119	                              
+1988	'Die Hard'	120	                              
+1974	'Chinatown'	121	                              
+1963	'The Great Escape'	122	                              
+1995	'Heat'	123	                              
+2015	'Room'	124	                              
+2006	'Pan s Labyrinth'	125	                              
+1954	'On the Waterfront'	126	                              
+2015	'Star Wars: Episode VII - The Force Awakens'	127	                              
+1988	'My Neighbor Totoro'	128	                              
+1985	'Ran'	129	                              
+1952	'Ikiru'	130	                              
+1939	'Mr. Smith Goes to Washington'	131	                              
+1957	'The Bridge on the River Kwai'	132	                              
+1925	'The Gold Rush'	133	                              
+1927	'Sunrise'	134	                              
+2009	'The Secret in Their Eyes'	135	                              
+1957	'The Seventh Seal'	136	                              
+1982	'Blade Runner'	137	                              
+2016	'Zootopia'	138	                              
+1976	'The Message'	139	                              
+1998	'Lock, Stock and Two Smoking Barrels'	140	                              
+2004	'Howl s Moving Castle'	141	                              
+1926	'The General'	142	                              
+1957	'Wild Strawberries'	143	                              
+1995	'Casino'	144	                              
+1980	'The Elephant Man'	145	                              
+2011	'Warrior'	146	                              
+2013	'The Wolf of Wall Street'	147	                              
+1961	'Judgment at Nuremberg'	148	                              
+2005	'V for Vendetta'	149	                              
+2001	'A Beautiful Mind'	150	                              
+2008	'Gran Torino'	151	                              
+1998	'The Big Lebowski'	152	                              
+2010	'Incendies'	153	                              
+1978	'The Deer Hunter'	154	                              
+1940	'Rebecca'	155	                              
+1996	'Fargo'	156	                              
+2016	'Deadpool'	157	                              
+1996	'Trainspotting'	158	                              
+1939	'Gone with the Wind'	159	                              
+1967	'Cool Hand Luke'	160	                              
+1954	'Dial M for Murder'	161	                              
+2010	'How to Train Your Dragon'	162	                              
+1999	'The Sixth Sense'	163	                              
+2003	'Finding Nemo'	164	                              
+2007	'Into the Wild'	165	                              
+1982	'The Thing'	166	                              
+2007	'No Country for Old Men'	167	                              
+2009	'Mary and Max'	168	                              
+1934	'It Happened One Night'	169	                              
+2014	'Gone Girl'	170	                              
+2003	'Kill Bill: Vol. 1'	171	                              
+2013	'Rush'	172	                              
+1979	'Life of Brian'	173	                              
+2004	'Hotel Rwanda'	174	                              
+2007	'There Will Be Blood'	175	                              
+1986	'Platoon'	176	                              
+1941	'The Maltese Falcon'	177	                              
+2015	'Mad Max: Fury Road'	178	                              
+2015	'Spotlight'	179	                              
+1953	'The Wages of Fear'	180	                              
+1976	'Network'	181	                              
+1969	'Butch Cassidy and the Sundance Kid'	182	                              
+1959	'The 400 Blows'	183	                              
+1986	'Stand by Me'	184	                              
+2010	'Shutter Island'	185	                              
+1993	'In the Name of the Father'	186	                              
+1966	'Persona'	187	                              
+2013	'12 Years a Slave'	188	                              
+2014	'The Grand Budapest Hotel'	189	                              
+2000	'Amores Perros'	190	                              
+1987	'The Princess Bride'	191	                              
+2015	'The Revenant'	192	                              
+2004	'Million Dollar Baby'	193	                              
+1959	'Ben-Hur'	194	                              
+1958	'Touch of Evil'	195	                              
+2014	'Wild Tales'	196	                              
+1977	'Annie Hall'	197	                              
+1940	'The Grapes of Wrath'	198	                              
+2009	'Hachi: A Dog s Tale'	199	                              
+1984	'Nausicaä of the Valley of the Wind'	200	                              
+1979	'Stalker'	201	                              
+1993	'Jurassic Park'	202	                              
+1955	'Diabolique'	203	                              
+1982	'Gandhi'	204	                              
+2007	'The Bourne Ultimatum'	205	                              
+1995	'Before Sunrise'	206	                              
+2001	'Donnie Darko'	207	                              
+1963	'8½'	208	                              
+2003	'Memories of Murder'	209	                              
+1998	'The Truman Show'	210	                              
+1976	'Rocky'	211	                              
+1939	'The Wizard of Oz'	212	                              
+1946	'The Best Years of Our Lives'	213	                              
+1984	'The Terminator'	214	                              
+2001	'Monsters, Inc.'	215	                              
+1995	'Twelve Monkeys'	216	                              
+2011	'Harry Potter and the Deathly Hallows: Part 2'	217	                              
+2005	'Sin City'	218	                              
+1993	'Groundhog Day'	219	                              
+1951	'Strangers on a Train'	220	                              
+2002	'Infernal Affairs'	221	                              
+1975	'Jaws'	222	                              
+1995	'La Haine'	223	                              
+1966	'The Battle of Algiers'	224	                              
+1975	'Barry Lyndon'	225	                              
+2013	'Prisoners'	226	                              
+2015	'The Martian'	227	                              
+1975	'Dog Day Afternoon'	228	                              
+2008	'Ip Man'	229	                              
+1982	'Fanny and Alexander'	230	                              
+2014	'The Imitation Game'	231	                              
+2012	'The Avengers'	232	                              
+2003	'Pirates of the Caribbean: The Curse of the Black Pearl'	233	                              
+2002	'Catch Me If You Can'	234	                              
+2010	'The King s Speech'	235	                              
+2011	'The Help'	236	                              
+1964	'A Fistful of Dollars'	237	                              
+2014	'Guardians of the Galaxy'	238	                              
+1957	'Throne of Blood'	239	                              
+1986	'Castle in the Sky'	240	                              
+1953	'Roman Holiday'	241	                              
+1952	'High Noon'	242	                              
+1991	'Beauty and the Beast'	243	                              
+2000	'In the Mood for Love'	244	                              
+1966	'Who s Afraid of Virginia Woolf?'	245	                              
+2012	'Gangs of Wasseypur'	246	                              
+1962	'The Man Who Shot Liberty Valance'	247	                              
+1946	'Notorious'	248	                              
+2001	'Lagaan: Once Upon a Time in India'	249	                              
+1984	'Paris, Texas'	250	                              
+1994	'The Shawshank Redemption'	1	                              
+1972	'The Godfather'	2	                              
+1974	'The Godfather: Part II'	3	                              
+2008	'The Dark Knight'	4	                              
+1993	'Schindler s List'	5	                              
+1957	'12 Angry Men'	6	                              
+1994	'Pulp Fiction'	7	                              
+2003	'The Lord of the Rings: The Return of the King'	8	                              
+1966	'The Good, the Bad and the Ugly'	9	                              
+1999	'Fight Club'	10	                              
+2001	'The Lord of the Rings: The Fellowship of the Ring'	11	                              
+1980	'Star Wars: Episode V - The Empire Strikes Back'	12	                              
+1994	'Forrest Gump'	13	                              
+2010	'Inception'	14	                              
+2002	'The Lord of the Rings: The Two Towers'	15	                              
+1975	'One Flew Over the Cuckoo s Nest'	16	                              
+1990	'Goodfellas'	17	                              
+1999	'The Matrix'	18	                              
+1954	'Seven Samurai'	19	                              
+1977	'Star Wars: Episode IV - A New Hope'	20	                              
+2002	'City of God'	21	                              
+1995	'Se7en'	22	                              
+1991	'The Silence of the Lambs'	23	                              
+1946	'It s a Wonderful Life'	24	                              
+1995	'The Usual Suspects'	25	                              
+1997	'Life Is Beautiful'	26	                              
+1994	'Léon: The Professional'	27	                              
+1968	'Once Upon a Time in the West'	28	                              
+2001	'Spirited Away'	29	                              
+1998	'Saving Private Ryan'	30	                              
+1998	'American History X'	31	                              
+2014	'Interstellar'	32	                              
+1942	'Casablanca'	33	                              
+1960	'Psycho'	34	                              
+1931	'City Lights'	35	                              
+1981	'Raiders of the Lost Ark'	36	                              
+2011	'The Intouchables'	37	                              
+1954	'Rear Window'	38	                              
+1936	'Modern Times'	39	                              
+1999	'The Green Mile'	40	                              
+1991	'Terminator 2: Judgment Day'	41	                              
+2002	'The Pianist'	42	                              
+2006	'The Departed'	43	                              
+1985	'Back to the Future'	44	                              
+2014	'Whiplash'	45	                              
+2000	'Gladiator'	46	                              
+2000	'Memento'	47	                              
+1979	'Apocalypse Now'	48	                              
+2006	'The Prestige'	49	                              
+1964	'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'	50	                              
+1994	'The Lion King'	51	                              
+1950	'Sunset Boulevard'	52	                              
+1979	'Alien'	53	                              
+1940	'The Great Dictator'	54	                              
+2006	'The Lives of Others'	55	                              
+1988	'Cinema Paradiso'	56	                              
+2012	'Django Unchained'	57	                              
+1980	'The Shining'	58	                              
+1957	'Paths of Glory'	59	                              
+1988	'Grave of the Fireflies'	60	                              
+2008	'WALL·E'	61	                              
+2012	'The Dark Knight Rises'	62	                              
+1999	'American Beauty'	63	                              
+2016	'Captain America: Civil War'	64	                              
+1986	'Aliens'	65	                              
+1997	'Princess Mononoke'	66	                              
+2003	'Oldboy'	67	                              
+1941	'Citizen Kane'	68	                              
+1959	'North by Northwest'	69	                              
+1984	'Once Upon a Time in America'	70	                              
+1981	'Das Boot'	71	                              
+1958	'Vertigo'	72	                              
+1957	'Witness for the Prosecution'	73	                              
+1983	'Star Wars: Episode VI - Return of the Jedi'	74	                              
+1931	'M'	75	                              
+1992	'Reservoir Dogs'	76	                              
+2001	'Amélie'	77	                              
+1995	'Braveheart'	78	                              
+2000	'Requiem for a Dream'	79	                              
+1971	'A Clockwork Orange'	80	                              
+1976	'Taxi Driver'	81	                              
+1944	'Double Indemnity'	82	                              
+2010	'Toy Story 3'	83	                              
+1962	'Lawrence of Arabia'	84	                              
+1962	'To Kill a Mockingbird'	85	                              
+2004	'Eternal Sunshine of the Spotless Mind'	86	                              
+1987	'Full Metal Jacket'	87	                              
+1984	'Amadeus'	88	                              
+1973	'The Sting'	89	                              
+1968	'2001: A Space Odyssey'	90	                              
+1948	'Bicycle Thieves'	91	                              
+1952	'Singin  in the Rain'	92	                              
+2000	'Snatch.'	93	                              
+1995	'Toy Story'	94	                              
+1975	'Monty Python and the Holy Grail'	95	                              
+2009	'Inglourious Basterds'	96	                              
+1921	'The Kid'	97	                              
+1997	'L.A. Confidential'	98	                              
+1965	'For a Few Dollars More'	99	                              
+1950	'Rashomon'	100	                              
+1960	'The Apartment'	101	                              
+1989	'Indiana Jones and the Last Crusade'	102	                              
+1983	'Scarface'	103	                              
+2011	'A Separation'	104	                              
+1950	'All About Eve'	105	                              
+1927	'Metropolis'	106	                              
+1961	'Yojimbo'	107	                              
+1948	'The Treasure of the Sierra Madre'	108	                              
+2005	'Batman Begins'	109	                              
+2012	'The Hunt'	110	                              
+1959	'Some Like It Hot'	111	                              
+2009	'3 Idiots'	112	                              
+1992	'Unforgiven'	113	                              
+2009	'Up'	114	                              
+1997	'Good Will Hunting'	115	                              
+1949	'The Third Man'	116	                              
+2015	'Inside Out'	117	                              
+1980	'Raging Bull'	118	                              
+2004	'Downfall'	119	                              
+1988	'Die Hard'	120	                              
+1974	'Chinatown'	121	                              
+1963	'The Great Escape'	122	                              
+1995	'Heat'	123	                              
+2015	'Room'	124	                              
+2006	'Pan s Labyrinth'	125	                              
+1954	'On the Waterfront'	126	                              
+2015	'Star Wars: Episode VII - The Force Awakens'	127	                              
+1988	'My Neighbor Totoro'	128	                              
+1985	'Ran'	129	                              
+1952	'Ikiru'	130	                              
+1939	'Mr. Smith Goes to Washington'	131	                              
+1957	'The Bridge on the River Kwai'	132	                              
+1925	'The Gold Rush'	133	                              
+1927	'Sunrise'	134	                              
+2009	'The Secret in Their Eyes'	135	                              
+1957	'The Seventh Seal'	136	                              
+1982	'Blade Runner'	137	                              
+2016	'Zootopia'	138	                              
+1976	'The Message'	139	                              
+1998	'Lock, Stock and Two Smoking Barrels'	140	                              
+2004	'Howl s Moving Castle'	141	                              
+1926	'The General'	142	                              
+1957	'Wild Strawberries'	143	                              
+1995	'Casino'	144	                              
+1980	'The Elephant Man'	145	                              
+2011	'Warrior'	146	                              
+2013	'The Wolf of Wall Street'	147	                              
+1961	'Judgment at Nuremberg'	148	                              
+2005	'V for Vendetta'	149	                              
+2001	'A Beautiful Mind'	150	                              
+2008	'Gran Torino'	151	                              
+1998	'The Big Lebowski'	152	                              
+2010	'Incendies'	153	                              
+1978	'The Deer Hunter'	154	                              
+1940	'Rebecca'	155	                              
+1996	'Fargo'	156	                              
+2016	'Deadpool'	157	                              
+1996	'Trainspotting'	158	                              
+1939	'Gone with the Wind'	159	                              
+1967	'Cool Hand Luke'	160	                              
+1954	'Dial M for Murder'	161	                              
+2010	'How to Train Your Dragon'	162	                              
+1999	'The Sixth Sense'	163	                              
+2003	'Finding Nemo'	164	                              
+2007	'Into the Wild'	165	                              
+1982	'The Thing'	166	                              
+2007	'No Country for Old Men'	167	                              
+2009	'Mary and Max'	168	                              
+1934	'It Happened One Night'	169	                              
+2014	'Gone Girl'	170	                              
+2003	'Kill Bill: Vol. 1'	171	                              
+2013	'Rush'	172	                              
+1979	'Life of Brian'	173	                              
+2004	'Hotel Rwanda'	174	                              
+2007	'There Will Be Blood'	175	                              
+1986	'Platoon'	176	                              
+1941	'The Maltese Falcon'	177	                              
+2015	'Mad Max: Fury Road'	178	                              
+2015	'Spotlight'	179	                              
+1953	'The Wages of Fear'	180	                              
+1976	'Network'	181	                              
+1969	'Butch Cassidy and the Sundance Kid'	182	                              
+1959	'The 400 Blows'	183	                              
+1986	'Stand by Me'	184	                              
+2010	'Shutter Island'	185	                              
+1993	'In the Name of the Father'	186	                              
+1966	'Persona'	187	                              
+2013	'12 Years a Slave'	188	                              
+2014	'The Grand Budapest Hotel'	189	                              
+2000	'Amores Perros'	190	                              
+1987	'The Princess Bride'	191	                              
+2015	'The Revenant'	192	                              
+2004	'Million Dollar Baby'	193	                              
+1959	'Ben-Hur'	194	                              
+1958	'Touch of Evil'	195	                              
+2014	'Wild Tales'	196	                              
+1977	'Annie Hall'	197	                              
+1940	'The Grapes of Wrath'	198	                              
+2009	'Hachi: A Dog s Tale'	199	                              
+1984	'Nausicaä of the Valley of the Wind'	200	                              
+1979	'Stalker'	201	                              
+1993	'Jurassic Park'	202	                              
+1955	'Diabolique'	203	                              
+1982	'Gandhi'	204	                              
+2007	'The Bourne Ultimatum'	205	                              
+1995	'Before Sunrise'	206	                              
+2001	'Donnie Darko'	207	                              
+1963	'8½'	208	                              
+2003	'Memories of Murder'	209	                              
+1998	'The Truman Show'	210	                              
+1976	'Rocky'	211	                              
+1939	'The Wizard of Oz'	212	                              
+1946	'The Best Years of Our Lives'	213	                              
+1984	'The Terminator'	214	                              
+2001	'Monsters, Inc.'	215	                              
+1995	'Twelve Monkeys'	216	                              
+2011	'Harry Potter and the Deathly Hallows: Part 2'	217	                              
+2005	'Sin City'	218	                              
+1993	'Groundhog Day'	219	                              
+1951	'Strangers on a Train'	220	                              
+2002	'Infernal Affairs'	221	                              
+1975	'Jaws'	222	                              
+1995	'La Haine'	223	                              
+1966	'The Battle of Algiers'	224	                              
+1975	'Barry Lyndon'	225	                              
+2013	'Prisoners'	226	                              
+2015	'The Martian'	227	                              
+1975	'Dog Day Afternoon'	228	                              
+2008	'Ip Man'	229	                              
+1982	'Fanny and Alexander'	230	                              
+2014	'The Imitation Game'	231	                              
+2012	'The Avengers'	232	                              
+2003	'Pirates of the Caribbean: The Curse of the Black Pearl'	233	                              
+2002	'Catch Me If You Can'	234	                              
+2010	'The King s Speech'	235	                              
+2011	'The Help'	236	                              
+1964	'A Fistful of Dollars'	237	                              
+2014	'Guardians of the Galaxy'	238	                              
+1957	'Throne of Blood'	239	                              
+1986	'Castle in the Sky'	240	                              
+1953	'Roman Holiday'	241	                              
+1952	'High Noon'	242	                              
+1991	'Beauty and the Beast'	243	                              
+2000	'In the Mood for Love'	244	                              
+1966	'Who s Afraid of Virginia Woolf?'	245	                              
+2012	'Gangs of Wasseypur'	246	                              
+1962	'The Man Who Shot Liberty Valance'	247	                              
+1946	'Notorious'	248	                              
+2001	'Lagaan: Once Upon a Time in India'	249	                              
+1984	'Paris, Texas'	250	                              

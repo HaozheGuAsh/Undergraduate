@@ -1,0 +1,15 @@
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bin\Debug\ReverseMap\resources.pri
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bin\Debug\AppxManifest.xml
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bin\Debug\BlankSharedApp1.Windows.build.appxrecipe
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\priconfig.xml
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\priconfig.xml.intermediate
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\layout.resfiles
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\layout.resfiles.intermediate
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\resources.resfiles
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\resources.resfiles.intermediate
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\pri.resfiles
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\pri.resfiles.intermediate
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\qualifiers.txt
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\qualifiers.txt.intermediate
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Ashgu\Documents\Visual Studio 2013\Projects\BlankSharedApp1\BlankSharedApp1\BlankSharedApp1.Windows\bld\Debug\ProjectArchitectures.txt

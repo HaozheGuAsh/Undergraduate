@@ -1,0 +1,9 @@
+1	'ash'	2013
+4	'gu'	2014
+7	'mengda'	2018
+3	'has'	2009
+9	'room'	2004
+13	'mate'	2000
+1	'duplicate'	2001
+4	'dupli'	9999
+
