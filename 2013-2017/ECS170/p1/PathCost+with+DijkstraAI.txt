@@ -1,0 +1,19 @@
+/* cost function = Math.pow(2.0, (getTile(p2) - getTile(p1))) */
+
+-seed 1
+PathCost, 416.0625
+
+-seed 2
+PathCost, 404.34375
+
+
+
+
+/* cost function = 1.0*(getTile(p1) / (getTile(p2) + 1)) */
+
+-seed 1
+198.59165501141644
+
+-seed 2
+198.56141550095256
+

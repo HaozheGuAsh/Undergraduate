@@ -1,0 +1,47 @@
+Haozhe Gu <hzgu@ucdavis.edu>
+Nov 3
+
+to iliast, mdxu, Xie, Yishen, Erin, mlmagno, aacallen, Jiadong, Zhiyi, javo, djburke, aesoria, Han 
+Dear professor llias
+
+a) ProjeGender Recognition by Voice
+
+b) Members: 13
+
+1) Haozhe Gu:		 hzgu@ucdavis.edu
+2) Mengda Xu:	         mdxu@ucdavis.edu
+3) Esther Zhou:	         xiezhou@ucdavis.edu
+4) Yishen Huang     	ysshuang@ucdavis.edu
+5) Erin Mcginnis      	emmcginnis@ucdavis.edu
+6) Mat Magno          	mlmagno@ucdavis.edu
+7) Aaron Allen            aacallen@ucdavis.edu
+8) Jiadong Zhang        jidzhang@ucdavis.edu
+9) Zhiyi Xu                  yzxu@ucdavis.edu
+10) Jason Vo              javo@ucdavis.edu
+11) Daniel Burke         djburke@ucdavis.edu
+12)  Allan Soria           aesoria@ucdavis.edu
+13) Han Chen             hhchen@ucdavis.edu
+
+c) Short Description:
+
+    Determine a person's gender as male or female from their voice seems to be ituitive to a human.  However, we are not certained about how we detect the difference between a male or female. So our group are interested in teaching machine to learn about this technique and reveal what actually determine one's gender based on the voice. We will analyze speech from  sources like Festvox CMU_ARCTIC Speech Database at Carnegie Mellon University. We then use R to process these voice file and using machine learning skill to teach the computer. We might also explore more hidden relationship to distinguish Human Voice and Non-Human voice.
+
+
+Yours Sincerely,
+Haozhe Gu
+
+
+Ilias Tagkopoulos <itagkopoulos@ucdavis.edu>
+Nov 7
+
+to me, mdxu, Xie, Yishen, Erin, mlmagno, aacallen, Jiadong, Zhiyi, javo, djburke, aesoria, Han 
+
+Approved. Make sure that you have a clean dataset with clear labels, sufficient features and run the audio decomposition algorithms early on. You should be able to get more than 90% performance (AUPR). 
+
+--
+Ilias Tagkopoulos, Ph.D.
+Associate Professor
+Computer Science & Genome Center, University of California, Davis
+Office: 5313 GBSF (Primary); 3063 Kemper Hall (Secondary)
+Phone: (530) 752-7707 | (530) 752-4821 
+Lab: 5212A GBSF | (530) 752-8974 | web: tagkopouloslab.ucdavis.edu

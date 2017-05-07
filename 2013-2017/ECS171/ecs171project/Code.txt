@@ -1,0 +1,445 @@
+library(warbleR)
+library(readr)
+library(rstudioapi)
+library(ROCR)
+library(ggplot2)
+this.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(this.dir)
+
+######## Processing Voice File####################
+setwd("C:/Users/Ash/Desktop//")
+setwd("~/Desktop/Google 云端硬盘/ecs171project/ap/")
+setwd("~/Downloads/presentation/")
+file.remove("manualoc_output.csv")
+
+manualoc(flim = c(0,0.28))
+a <- data.frame(read_csv("manualoc_output.csv"))
+result<- specan(X =a ,threshold = 15,bp = c(0, 0.28))
+############### Prediction #######################
+newsample = result[,4:length(result)]
+pred <- as.data.frame(predict(logist,newsample, type='response'))
+rownames(pred)= result[,1]
+pred
+##################################################
+
+######## Logistic ################################
+setwd(this.dir)
+dataVoice <- read.csv('voice.csv')
+sampleSize <- dim(dataVoice)[1]
+
+# permute the  data 
+dataVoice_shuffle <- dataVoice[sample( seq(sampleSize) , sampleSize),]
+
+# percent and size of training set will be
+n <- 0.70
+trainSize <- round(sampleSize*n)
+
+
+# split from the full data for training 
+trainSet <-  dataVoice_shuffle[1:trainSize,]
+
+# use the remaining data for testing
+testSet <- dataVoice_shuffle[ (trainSize + 1): sampleSize, ]
+
+logist <- glm(label ~ meanfreq+median+Q25+IQR+skew+kurt+sfm+meanfun+minfun+maxfun+meandom+dfrange+modindx, family = "binomial" , data=trainSet )
+
+
+pFull <- predict(logist,dataVoice, type='response')
+pTrain <- predict(logist, trainSet , type='response')
+pTest <- predict(logist,testSet, type='response')
+
+
+fullL <- dataVoice$label
+trainL <- trainSet$label
+testL <- testSet$label
+
+levels(fullL)[1] = 0
+levels(fullL)[2] = 1
+
+levels(trainL)[1] = 0
+levels(trainL)[2] = 1
+
+levels(testL)[1] = 0
+levels(testL)[2] = 1
+
+pr <- prediction(pTest, testL)
+prf <- performance(pr, measure = "tpr", x.measure = "fpr")
+plot(prf,main = "ROC of Logistic Regression Testing")
+
+# accuracy of full data 
+print("Full data")
+print(mean( round(pFull) == fullL) )
+
+# accuracy of Training data 
+print('Training')
+print(mean( round(pTrain) == trainL ))
+
+# accuracy of Testing data 
+print('Testing')
+print(mean( round(pTest) == testL ))
+pearson <- residuals(logist, "pearson")
+which(abs(pearson)>1.96)
+#plot(logist)
+p1<-ggplot(logist, aes(.fitted, pearson,color = pearson>0))+geom_point()
+p1<-p1+guides(color=guide_legend(title="Is Male"))
+p1<-p1+stat_smooth(method="loess")+geom_hline(yintercept=0, col="red", linetype="dashed")
+p1<-p1+xlab("Fitted values")+ylab("Pearson Residule")
+p1<-p1+ggtitle("Pearson Residual vs Fitted Plot")+theme_bw()
+p1
+####################################################
+
+
+########### CART ###################################
+library(rpart)
+library(rpart.plot)
+library(rattle)
+library(RColorBrewer)
+
+# Create classification tree
+tree <-rpart(label~.,method="class",data = trainSet)
+
+# Result
+printcp(tree)
+
+# prune the tree and visualize
+#Each node show three lines: 1) Predicted Class 
+#                            2)Conditional probability for each class 
+#                            3) Percentage observation at that node
+
+mincp <- tree$cptable[which.min(tree$cptable[,"xerror"]),"CP"]
+pruned.tree <- prune(tree, cp = mincp)
+fancyRpartPlot(pruned.tree)
+
+
+# Visualize Tree(complex)
+complex.tree <-rpart(label~.,method="class",data = trainSet,control = rpart.control(cp = 1e-04))
+fancyRpartPlot(complex.tree)
+
+
+# Statistics for simple tree
+predtrain <- round(predict(tree, trainSet))[,2] #Taking Whether is Male as lable, so 0 for Female, 1 For Male
+predtest <- round(predict(tree, testSet))[,2]
+predfull <- round(predict(tree, dataVoice))[,2]
+
+
+fullL <- dataVoice$label
+trainL <- trainSet$label
+testL <- testSet$label
+
+levels(fullL)[1] = 0
+levels(fullL)[2] = 1
+
+levels(trainL)[1] = 0
+levels(trainL)[2] = 1
+
+levels(testL)[1] = 0
+levels(testL)[2] = 1
+
+statistic = c(mean( predfull == fullL),mean( predtrain == trainL ),mean( predtest == testL ))
+
+# Statistics for complex tree
+predtrain <- round(predict(complex.tree, trainSet))[,2] #Taking Whether is Male as lable, so 0 for Female, 1 For Male
+predtest <- round(predict(complex.tree, testSet))[,2]
+predfull <- round(predict(complex.tree, dataVoice))[,2]
+
+
+fullL <- dataVoice$label
+trainL <- trainSet$label
+testL <- testSet$label
+
+levels(fullL)[1] = 0
+levels(fullL)[2] = 1
+
+levels(trainL)[1] = 0
+levels(trainL)[2] = 1
+
+levels(testL)[1] = 0
+levels(testL)[2] = 1
+
+statistic = rbind(statistic,c(mean( predfull == fullL),mean( predtrain == trainL ),mean( predtest == testL )))
+rownames(statistic) = c("Simple Tree","Complex Tree")
+colnames(statistic) = c("Full Accuracy","Trainning Accuracy","Testing Accuracy")
+statistic
+
+#######################################################
+
+
+############## 10-fold Cross-Validation ################
+library(ROCR)
+
+crossV<- function(data,k=10){
+  # shuffling the data
+  data = data[sample(nrow(data)), ]
+  # split the size samples of the data into k parts
+  folds <- cut(1:nrow(data),breaks=k,labels=F )
+  
+  generalAcc <- 0
+  xtpr <- 0
+  yfpr <- 0
+  
+  auc_k <- 0
+  
+  for(i in 1:k){
+    # the sequence of indices pertaining to the testing set
+    testSeq = which(folds == i)
+    # k data set left to test the training
+    testSet = data[testSeq,]
+    # All other data no used for testing used for training
+    trainSet = data[-testSeq,]
+    
+    model <- glm(label~. , family ='binomial', data=trainSet)
+    
+    # prediction the testing set
+    p <- predict(model,testSet,type='response')
+    # computing the accuracy of the testing set
+    accuracy <- mean( round(p) == testSet$label)
+    # culminating the accuracy for the generalization accuracy
+    generalAcc <- generalAcc + accuracy  
+    
+    # computing the ROC of the prediction vs actual 
+    pr <- prediction(p,testSet$label)
+    # gives the values of the true positive rate and false positive rate
+    prf <- performance(pr,measure='tpr',x.measure='fpr')
+    # culminating both rates
+    xtpr <- xtpr + prf@x.values[[1]]
+    yfpr <- yfpr + prf@y.values[[1]]
+    # gives the area under the curve
+    auc <- performance(pr,measure= 'auc')
+    
+    # culminating the auc
+    auc_k <- auc_k + auc@y.values[[1]]
+    
+    
+  }
+  # average ROC for the k times
+  avgRoc <- list(x= xtpr/k , y = xtpr/k)
+  result = list(roc=avgRoc,genAcc= generalAcc/k, auc=auc_k/k);
+  return(result)
+  
+}
+
+dataVoice <- read.csv('voice.csv')
+sampleSize <- dim(dataVoice)[1]
+
+levels(dataVoice$label)[1] = 0
+levels(dataVoice$label)[2] = 1
+
+
+
+logist <- glm(label ~. , family = "binomial" , data=trainSet )
+
+# Does k-fold cross validation and average of ROC 
+results <- crossV(dataVoice,10)
+
+
+plot( results$roc )
+
+print("Average auc")
+print(results$auc)
+print('Generalizatin Accuracy for 10-fold ')
+print(results$genAcc)
+#######################################################################
+
+
+############### ANN ##################################################
+temDATA<- read.csv('voice.csv')
+
+DATA<- matrix(0,nrow(temDATA),ncol(temDATA))
+for (i in 1:nrow(temDATA)){
+  for (j in 1:ncol(temDATA)){
+    if (j<=20)
+      DATA[i,j]=temDATA[i,j]
+    else if (temDATA[i,21]=='male')
+      DATA[i,21]= 1
+    else DATA[i,21]= 0
+  }
+}
+for(j in 1:ncol(DATA)-1){
+  DATA[,j]= DATA[,j]/max(DATA[,j])
+}  
+
+alpha=0.07;
+hiddenSize = 4;
+trainsize = 2000;
+xnum=20;
+ynum=1;
+
+X= DATA[1:trainsize,1:xnum];
+ytotal= matrix(
+  c(DATA[1:trainsize,21]),nrow=trainsize,ncol = 1
+)
+
+W00=  c(-0.6794447,0.0111883,   0.6420655,   0.1478195,
+        -0.6952404,   0.3586893,  -0.7474827,  -0.0060639,
+        0.9061444,  -0.1709594,  -0.1163979,  -0.5053447,
+        0.6220565,   0.1639165,   0.1262733,  -0.6495173,
+        0.5012891,  -0.5795731,   0.2934606,  -0.5910225,
+        0.3412345,   0.2951111,  -0.2634495,   0.2641305,
+        0.3454287,  -0.6598046,  -0.4498750,  -0.0949538,
+        -0.3184876,  -0.2075942,  -0.4249882,   0.2750651,
+        -0.6850562,  -0.0084722,   0.6462543 , -0.6090260,
+        0.9867584, -0.8259007 , -0.7744582,  -0.7885834,
+        -0.4542271,  -0.4159571,  -0.3153829,   0.1152582,
+        -0.2729753,   0.2948067 ,  0.1714486,  -0.4248766,
+        -0.0489812,  -0.3066307,   0.0292842,   0.4554422,
+        0.6393066,  -0.6094884,   0.7937376,   0.5402296,
+        -0.4989306,  -0.0403639,  -0.7245631,  -0.6648899,
+        0.4621375,   0.1862518,  -0.5221250,  -0.4016326,
+        0.0521327,  -0.2469184,   0.8258410,  -0.0344100,
+        0.6709098,  -0.6531442,   0.4394216,  -0.9628887,
+        0.8150473,  -0.4721710,   0.5908231,   0.0096877,
+        -0.5984609,  -0.1692513,   0.7466902,  -0.8786762)
+W0= matrix(0,nrow = 20,ncol = 4)
+j=1
+k=1
+for(i in 1:80)
+{
+  if(j<4)
+  {W0[k,j]=W00[i]
+  j=j+1
+  }
+  else 
+  {
+    W0[k,j]=W00[i]
+    j=1
+    k=k+1}
+}
+W1 =matrix(
+  c(-0.42125,
+    -0.10643,
+    -0.38375,
+    0.31852)
+  , nrow =4, ncol=1)
+
+for (j in 1:5000)
+{
+  for (M in 1:ynum)
+  {
+    synapse_0 = W0[(M*xnum-xnum+1):(M*xnum),1:hiddenSize];
+    synapse_1 = W1[1:hiddenSize,M];
+    y=ytotal[1:trainsize,M];
+    layer_0 = X;
+    layer_1 = 1/(1+exp((layer_0%*%synapse_0*-1)));
+    layer_2 = 1/(1+exp((layer_1%*%synapse_1*-1)));
+    layer_2_error = layer_2 - y
+    layer_2_delta = layer_2_error*((layer_2)*(1-layer_2))
+    layer_1_error = layer_2_delta%*%(t(synapse_1))
+    layer_1_delta = layer_1_error*((layer_1)*(1-layer_1))
+    synapse_1 = synapse_1- alpha * (t(layer_1)%*%(layer_2_delta))
+    synapse_0 = synapse_0- alpha * (t(layer_0)%*%(layer_1_delta))
+    W0[(M*xnum-xnum+1):(M*xnum),1:hiddenSize]=synapse_0
+    W1[1:hiddenSize,M]=synapse_1
+  }
+}    
+
+
+testsize=nrow(DATA)-trainsize
+correct=0;
+X=DATA[(trainsize+1):(trainsize+testsize),1:xnum];
+y=matrix(
+  c(DATA[(trainsize+1):(trainsize+testsize),21]),nrow=testsize,ncol = 1)
+synapse_0 = W0[(M*xnum-xnum+1):(M*xnum),1:hiddenSize];
+synapse_1 = W1[1:hiddenSize,M];
+layer_0 = X;
+layer_1 = 1/(1+exp((layer_0%*%synapse_0*-1)));
+layer_2 = 1/(1+exp((layer_1%*%synapse_1*-1)))
+for(i in 1:nrow(layer_2))
+{ if( (layer_2[i,1]>0.5&&y[i,1]>0.5)||(layer_2[i,1]<0.5&&y[i,1]<0.5) )
+  correct=correct +1;}
+correct = correct/testsize  #prediction rate
+
+######use converted input#######
+#X   # imputnum x 20 matrix  
+#synapse_0 = W0[(M*xnum-xnum+1):(M*xnum),1:hiddenSize];
+#synapse_1 = W1[1:hiddenSize,M];
+#layer_0 = X;
+#layer_1 = 1/(1+exp((layer_0%*%synapse_0*-1)));
+#result = 1/(1+exp((layer_1%*%synapse_1*-1)))
+#
+#################### SVM (MATLAB)######################################
+M = importdata('voice.csv.txt');
+Matrix = zeros(size(M,1)-1,21);
+
+%column 21: female -1 male 1
+for i = 2:size(M,1)
+    line = strsplit(char(M(i,:)), ',');
+    if strcmp(line(1,21),'"female"')
+        line(1,21) = cellstr('-1');
+    else
+        line(1,21) = cellstr('1');
+    end
+    for j = 1:21
+        Matrix(i-1,j) = str2double(line(1,j));
+    end
+end
+
+%shuffle Matrix
+index = randperm(3168);
+for i = 1:3168
+    Matrix(i,:) = Matrix(index(i),:);
+end
+
+%70-30 training-testing ratio
+
+Y_train = Matrix(1:2217,21);
+X_train = Matrix(1:2217,1:20);
+Y_test = Matrix(2218:3168,21);
+X_test = Matrix(2218:3168,1:20);
+
+%train + test
+SVMModel = fitcsvm(X_train,Y_train,'KernelFunction','linear','Standardize',true,'ClassNames',{'-1','1'});
+
+[label_train,score_train] = predict(SVMModel,X_train);
+[s_train,n_train] = sumabs(str2double(label_train)-Y_train);
+accuracy_training = (2217-s_train)/2217;
+
+[label_test,score_test] = predict(SVMModel,X_test);
+[s_test,n_test] = sumabs(str2double(label_test)-Y_test);
+accuracy_test = (1051-s_test)/1051;
+
+
+%tune+ retrain + test
+SVMModel = fitcsvm(X_train,Y_train,'KernelFunction','linear','KernelScale','auto','Standardize',true,'ClassNames',{'-1','1'});
+CVSVMModel = crossval(SVMModel);
+loss = kfoldLoss(CVSVMModel);
+ks = SVMModel.KernelParameters.Scale;
+
+%From tuning result below(need 8+ hr to run): 
+%pick BoxConstraint = 0.00001, new_ks = ks*0.001 w/ loss = 0.019846639603067
+BoxConstraint = 0.00001;
+new_ks = ks*0.001;
+%{
+BoxConstraint = 0.000001;
+new_ks = ks*0.000001;
+L = zeros(11,11);
+
+for i = 1:11
+    BoxConstraint = BoxConstraint*10.^i;
+    for j = 1:11
+        new_ks = new_ks*10.^i;
+        SVMModel = fitcsvm(X_train,Y_train,'KernelFunction','linear','KernelScale',new_ks,'BoxConstraint', BoxConstraint,'Standardize',true,'ClassNames',{'-1','1'});
+        CVSVMModel = crossval(SVMModel);
+        L(i,j) = kfoldLoss(CVSVMModel);  
+    end
+end
+%}
+
+SVMModel_new = fitcsvm(X_train,Y_train,'KernelFunction','linear','KernelScale',new_ks,'BoxConstraint', BoxConstraint,'Standardize',true,'ClassNames',{'-1','1'});
+
+[label_train_new,score_train_new] = predict(SVMModel_new,X_train);
+[s_train_new,n_train_new] = sumabs(str2double(label_train_new)-Y_train);
+accuracy_training_new = (2217-s_train_new)/2217;
+
+[label_test_new,score_test_new] = predict(SVMModel_new,X_test);
+[s_test_new,n_test_new] = sumabs(str2double(label_test_new)-Y_test);
+accuracy_test_new = (1051-s_test_new)/1051;
+
+###############################################################
+
+
+
+
+
+
+
+
