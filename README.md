@@ -1,2 +1,2 @@
 # Undergrate
-Project During UC Davis
+Project During Undergraduate
