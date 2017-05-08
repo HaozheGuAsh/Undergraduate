@@ -1,0 +1,262 @@
+A.StdIntrnl
+{
+    FONT-SIZE: 9pt;
+    COLOR: #0000cd;
+    FONT-FAMILY: "Times New Roman"
+}
+A.StdXtrnl
+{
+    FONT-SIZE: 9pt;
+    COLOR: #00008b;
+    FONT-FAMILY: "Times New Roman"
+}
+BODY.Std
+{
+    BACKGROUND: #fffff0;
+    MARGIN-LEFT: 20px;
+    FONT-FAMILY: "Arial", "sans-serif"
+}
+H1.StdWizard
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 11pt;
+    COLOR: #000000
+}
+LI.Std
+{
+    FONT-SIZE: 9pt
+}
+P.Std
+{
+    FONT-SIZE: 9pt
+}
+SPAN.StdCheckBoxValue
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000
+}
+SPAN.StdErrText
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #ff0000
+}
+SPAN.StdFieldLbl
+{
+    FONT-SIZE: 9pt;
+    COLOR: #00008b
+}
+SPAN.StdLogoWhite
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18pt;
+    COLOR: #ffffff;
+    FONT-FAMILY: "Arial"
+}
+SPAN.StdLogoBlack
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18pt;
+    COLOR: #000000;
+    FONT-FAMILY: "Arial"
+}
+SPAN.StdRBValue
+{
+    FONT-SIZE: 9pt;
+    COLOR: #000000
+}
+SPAN.StdReqdFieldLbl
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial
+}
+SPAN.StdText
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: #000000
+}
+TD.Std
+{
+    FONT-SIZE: 9pt;
+    BACKGROUND-IMAGE: none;
+    VERTICAL-ALIGN: top;
+    COLOR: black;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #e1ecf2;
+    TEXT-ALIGN: left
+}
+TD.StdBlank
+{
+    FONT-SIZE: 9pt;
+    VERTICAL-ALIGN: top;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: left
+}
+TD.StdBlankBlack
+{
+    FONT-SIZE: 9pt;
+    BACKGROUND: #000000;
+    VERTICAL-ALIGN: top;
+    TEXT-ALIGN: left
+}
+TD.StdCtr
+{
+    FONT-SIZE: 9pt;
+    BACKGROUND: #dddddd;
+    VERTICAL-ALIGN: top;
+    TEXT-ALIGN: center
+}
+TD.StdFieldLbl
+{
+    FONT-SIZE: 9pt;
+    VERTICAL-ALIGN: top;
+    COLOR: #00008b;
+    TEXT-ALIGN: left
+}
+TD.StdReadOnlyFieldLbl
+{
+    FONT-SIZE: 10pt;
+    VERTICAL-ALIGN: top;
+    TEXT-ALIGN: left
+}
+TD.StdReqdFieldLbl
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    VERTICAL-ALIGN: top;
+    COLOR: #191970;
+    FONT-FAMILY: Arial;
+    TEXT-ALIGN: left
+}
+TD.StdRight
+{
+    FONT-SIZE: 9pt;
+    BACKGROUND-IMAGE: none;
+    VERTICAL-ALIGN: top;
+    COLOR: black;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #83a0c8;
+    TEXT-ALIGN: right
+}
+TH.StdCtr
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    BACKGROUND: #191970;
+    COLOR: #ffffff;
+    TEXT-ALIGN: center
+}
+TH.StdCtrBd
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    BACKGROUND: #191970;
+    COLOR: #ffffff;
+    TEXT-ALIGN: center
+}
+TH.StdLeft
+{
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 9pt;
+    BACKGROUND: #191970;
+    COLOR: #ffffff;
+    TEXT-ALIGN: left
+}
+TH.StdRight
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    BACKGROUND-IMAGE: none;
+    COLOR: white;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #83a0c8;
+    TEXT-ALIGN: right
+}
+TH.StdRightBd
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    BACKGROUND-IMAGE: none;
+    COLOR: white;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #83a0c8;
+    TEXT-ALIGN: right
+}
+TD.WhiteRow
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: white
+}
+TH.WhiteRowName
+{
+    FONT-WEIGHT: bold;
+	FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: white
+}
+TD.DistRow
+{
+     FONT-WEIGHT: bold;
+	FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #FFFFCC
+}
+TD.RPRowName
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #e1ecf2
+}
+TD.RPRowData
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #e1ecf2
+}
+TD.RPColumnCenterName
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #e1ecf2;
+    TEXT-ALIGN: center
+}
+TD.RPRightData
+{
+    FONT-SIZE: 9pt;
+    COLOR: black;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #e1ecf2;
+    TEXT-ALIGN: right
+}
+A.aActive:active
+{
+    COLOR: red
+}
+A.aVisited:visited
+{
+    COLOR: black
+}
+A.aLink:link
+{
+    COLOR: red
+}
+INPUT.NumRight
+{
+    TEXT-ALIGN: right
+}

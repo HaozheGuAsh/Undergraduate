@@ -1,0 +1,512 @@
+{
+car[i,1] = "acc"
+}
+if(identical(car[i,2],"vhigh"))
+{
+car[i,2] = "high"
+}
+else if(identical(car[i,2],"med"))
+{
+car[i,2] = "low"
+}
+}
+cartable = table(car)
+car = data.frame(expand.grid(PR = factor(c("low","high")),SA = factor(c("low","medium", "high")), AC =
+factor(c("Acc", "Unacc"))) , count = c(1,1,154,65,184,115,288,288,134,223,104,173))
+library(MASS)
+model1 = glm(count~SA+AC+PR+SA:AC+PR:AC,family = poisson,data = car)
+model11 = loglm(count~SA+AC+PR+SA:AC+PR:AC,data = car, param=T)
+#model11
+#summary(model1)
+model2 = glm(count~SA+AC+PR+SA:AC+PR:AC+SA:PR,family = poisson,data = car)
+model22 = loglm(count~SA+AC+PR+SA:AC+PR:AC+SA:PR,data = car,param=T)
+#model22
+#summary(model2)
+model33 = loglm(count~.^3,data = car,param=T)
+model3 = glm(count~SA+AC+PR+SA:AC+PR:AC+SA:PR+SA:PR:AC,family = poisson,data = car)
+model11
+AIC(model1)
+model22
+summary(model2)
+model2
+model22
+model3
+model2 = glm(count~.^2,data = car, family = poisson)
+summary(model2)
+model22 = loglm(count~.^2,data = car,param=T)
+model22
+model22
+model33
+AIC(model3)
+model22
+model2
+summary(model2)
+anova(model1,model2,model3)
+summary(model2)
+coef = (summary(model2)$coefficient)
+model_ci = vector()
+for(i in 6:10)
+{
+model_ci = rbind(model_ci,c(exp(coef[i,1]-1.96*coef[i,2]),exp(coef[i,1]+1.96*coef[i,2])))
+}
+rownames(model_ci) = rownames(coef)[6:10]
+colnames(model_ci) = c("CI_lower","CI_higher")
+model_ci
+model2 = glm(count~.^2,data = car, family = poisson)
+model22 = loglm(count~.^2,data = car,param=T)
+rbind(model1$aic,model2$aic,model3$aic)
+coef = (summary(model2)$coefficient)
+model_ci = vector()
+for(i in 6:10)
+{
+model_ci = rbind(model_ci,c(exp(coef[i,1]-1.96*coef[i,2]),exp(coef[i,1]+1.96*coef[i,2])))
+}
+rownames(model_ci) = rownames(coef)[6:10]
+colnames(model_ci) = c("CI_lower","CI_higher")
+model_ci
+coef
+load("~/Downloads/NHANES.Rdata")
+View(NHANES)
+load("~/Desktop/Google 云端硬盘/Undergraduate/Junior & Senior/Fall 2016/STA 141/Sta_141_HW2.R")
+sapply(NHANES,function(var) sum(is.na(var)))
+library(vcd)
+install.packages("vcd")
+library(vcd)
+version()
+R.version
+require(devtools)
+install_github('andreacirilloac/updateR')
+install.packages("devtools")
+install_github('andreacirilloac/updateR')
+require(devtools)
+install_github('andreacirilloac/updateR')
+updateR(admin_password = "os_admin_user_password")
+library(updateR)
+updateR(admin_password = "os_admin_user_password")
+updateR(admin_password = "ash940926")
+if(!require(installr)) {
+install.packages("installr"); require(installr)} #load / install+load installr
+# using the package:
+updateR()
+install.packages('devtools') #assuming it is not already installed
+library(devtools)
+install_github('andreacirilloac/updateR')
+library(updateR)
+updateR(admin_password = 'Admin user password')
+install.packages('devtools') #assuming it is not already installed
+library(devtools)
+install_github('andreacirilloac/updateR')
+library(updateR)
+updateR(admin_password = 'ash940926')
+install.packages("devtools")
+updateR()
+library(updateR)
+admin_password = "ash940926")
+updateR(admin_password = "ash940926")
+setInternet2(TRUE)
+install.package("download")
+library(download)
+install.packages("downloader")
+updateR(admin_password = "ash940926")
+download.file(url,filename)
+library(downloaded)
+library(downloader)
+updateR(admin_password = "ash940926")
+library(vcd)
+attach(NHANES)
+Ed = factor(Ed,levels = c(0,1), labels = c("no college edu","college edu"))
+Race = factor(Race,level = c(0,1), labels = c("Caucasian","non-Caucasian"))
+mosaic(NHANES, shade = TRUE, legend = TRUE)
+library(vcd)
+load("NHANES.Rdata")
+attach(NHANES)
+attach(NHANES)
+#check null condition
+sapply(NHANES,function(var) sum(is.na(var)))
+#make levels more infomative
+Ed = factor(Ed,levels = c(0,1), labels = c("no college edu","college edu"))
+Race = factor(Race,level = c(0,1), labels = c("Caucasian","non-Caucasian"))
+#Q1 Relation between categorical  Smoke Ed Race Sex
+mosaic(NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+NHANES$Ed = factor(Ed,levels = c(0,1), labels = c("no college edu","college edu"))
+NHANES$Race = factor(Race,level = c(0,1), labels = c("Caucasian","non-Caucasian"))
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+View(NHANES)
+attach(NHANES)
+sapply(NHANES,function(var) sum(is.na(var)))
+View(NHANES)
+load("~/Downloads/NHANES.Rdata")
+load("~/Downloads/NHANES.Rdata")
+attach(NHANES)
+View(NHANES)
+Ed = factor(Ed,levels = c(0,1), labels = c("no college edu","college edu"))
+Ed
+library(vcd)
+load("~/Downloads/NHANES.Rdata")
+attach(NHANES)
+Ed = factor(Ed,levels = c(0,1), labels = c("no college edu","college edu"))
+Ed
+load("~/Downloads/NHANES.Rdata")
+attach(NHANES)
+Ed
+View(NHANES)
+Ed[1]
+library(vcd)
+load("~/Downloads/NHANES.Rdata")
+attach(NHANES)
+Ed[1]
+NHANES$Race = factor(Race,level = c(0,1), labels = c("Caucasian","non-Caucasian"))
+Race[1]
+View(NHANES)
+NHANES$Ed = factor(Ed,levels = c(0,1), labels = c("no college edu","college edu"))
+NHANES$Race = factor(Race,level = c(0,1), labels = c("Caucasian","non-Caucasian"))
+sapply(NHANES,function(var) sum(is.na(var)))
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+NHANES$Ed = factor(Ed,levels = c(0,1), labels = c("non-college","college"))
+NHANES$Race = factor(Race,level = c(0,1), labels = c("Caucasian","non-Caucasian"))
+#Q1 Relation between categorical  Smoke Ed Race Sex
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex + Ed , data = NHANES, shade = TRUE, legend = TRUE)
+, d
+mosaic(~ Smoke + Sex  , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Race, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex + Ed + Race, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Cancer.Incidence , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+ Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+ Sex +Smoke, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Cancer.Incidence , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke+ Sex +Cancer.Incidence, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+ Sex +Smoke, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+ Smoke+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+ Smoke+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Ed,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~  Cancer.Incidence +Smoke, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Race,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~  Cancer.Incidence +Smoke, data = NHANES, shade = TRUE, legend = TRUE)+
+mosaic(~ Cancer.Incidence+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+par(mfrow = c(2,2))
+mosaic(~  Cancer.Incidence +Smoke, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Ed,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Race,data=NHANES, shade = TRUE, legend = TRUE)
+par(mfrow = c(2,2))
+mosaic(~  Cancer.Incidence +Smoke, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Ed,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Race,data=NHANES, shade = TRUE, legend = TRUE)
+par(mfrow = c(1,1))
+par(mfrow = c(2,2))
+mosaic(~  Cancer.Incidence +Smoke, data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Cancer.Incidence+Sex,data=NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Ed + Sex , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Smoke + Race , data = NHANES, shade = TRUE, legend = TRUE)
+mosaic(~ Ed + Race , data = NHANES, shade = TRUE, legend = TRUE)
+filter(NHANES,Race =="Caucasian"&Ed=="college")
+nrow(filter(NHANES,Race =="Caucasian"&Ed=="college"))
+nrow(filter(NHANES,Race =="Caucasian"&Ed=="non-college"))
+nrow(filter(NHANES,Race =="non-Caucasian"&Ed=="non-college"))
+nrow(filter(NHANES,Race =="non-Caucasian"&Ed=="college"))
+install.package("rgl")
+install.packages("rgl")
+library(rgl)
+z = 2 * volcano # Exaggerate the relief of a volcano surface (data volcano is part of rgl package)
+x =10 * (1:nrow(z)) # 10 meter spacing (S to N)
+y = 10 * (1:ncol(z)) # 10 meter spacing (E to W)
+persp3d(x, y, z, col = "green3", aspect = "iso”) # perspective plot of surface z on the grid of x and y
+)
+z = 2 * volcano
+x =10 * (1:nrow(z))
+y = 10 * (1:ncol(z))
+persp3d(x, y, z, col = "green3", aspect = "iso”)
+)
+run
+plot3d(wt, disp, mpg, col="red", size=5)
+persp3d(x, y, z, col = "green3", aspect = "iso”)
+load("~/Desktop/Google 云端硬盘/sta141_test.R")
+0.509+0.513+0.676+0.445
+car = data.frame(expand.grid( injury= factor(c("Nonfatal","fatal")),eject = factor(c("yes","no")), safety =
+factor(c("seltbelt", "none"))) , count = c(1105,14,411111,483,4624,497,157342,1008))
+model1 = glm(count~.^2,data = car,family = poisson)
+model11 = loglm(count~.^2,data = car,param=T)
+summary(model1)
+injury = data.frame(expand.grid( injury= factor(c("No","Yes")),seatbelt = factor(c("no","yes")), location =
+factor(c("urban", "rural")),gender = factor(c("female","male"))) , count = c(7287,996,11587,759,3246,973,6134,757,10381,812,10969,380,6123,1084,6693,513))
+injury
+car = data.frame(expand.grid( injury= factor(c("Nonfatal","fatal")),eject = factor(c("yes","no")), safety =
+factor(c("seltbelt", "none"))) , count = c(1105,14,411111,483,4624,497,157342,1008))
+model1 = glm(count~.^2,data = car,family = poisson)
+model11 = loglm(count~.^2,data = car,param=T)
+summary(model1)
+install.packages("warble")
+install.packages("warbleR")
+install.packages("warbleR")
+version()
+R
+library(rstudioapi)
+library(readr)
+library(stringr)
+library(gtools)
+this.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+directory= paste(this.dir,c("/CarAdvert"),sep = "")
+setwd(this.dir)
+library(RCurl)
+library(XML)
+link = "http://anson.ucdavis.edu/~mueller/cveng13.html"
+doc1 = htmlParse(link)
+whole=getNodeSet(doc1,path="//p[contains(.,'(')]")
+url=getNodeSet(doc1,path="//p[contains(.,'(')]//a[@href]")
+content = sapply(1:length(whole), function(i) str_replace_all(xmlValue(whole[[i]]), "[\r\n]" , ""))
+txtwhole = sapply(1:length(whole),function(i) capture.output(whole[[i]],file = NULL))
+output2 <- data.frame(Year_of_publication = numeric(),
+Authors = character(),
+titile_publication = character(),
+title_journal = character(),
+volume= character(),
+url= character(),stringsAsFactors = F)
+regex.weburl = "(href=\\\").+(\\\")"
+regex.webauthor = ".+(\\([0-9]+\\))"
+regex.webtitle = "(\\([0-9]+\\)[\\.,]+).+(.)"
+regex.webjournal = "(<em>).+(<\\/em>)"
+regex.webvolume = "(<strong>).+(<\\/strong>)"
+regex.weburlcheck = "(\\([a-zA-Z\\s]+\\))"
+dopaste<-function(i)
+{
+len = length(str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]])
+start = 3
+tmp = str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]][2]
+while(start<len)
+{
+tmp = paste(tmp,str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]][start],sep="")
+start = start+1
+}
+return(tmp)
+}
+dummy = sapply(1:length(whole),function(i)
+{
+year = as.numeric(str_sub(unlist(str_extract_all(content[[i]],regex.webauthor)),-5,-2))
+author = str_sub(unlist(str_extract_all(content[[i]],regex.webauthor)),1,-7)
+title = str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]][1]
+journal = ifelse(length(str_sub(unlist(str_extract_all(txtwhole[[i]],regex.webjournal)),5,-6))==0,
+dopaste(i),
+str_sub(unlist(str_extract_all(txtwhole[[i]],regex.webjournal)),5,-6))
+volume = str_sub(unlist(str_extract_all(txtwhole[[i]],regex.webvolume)),9,-10)
+web = str_sub(unlist(str_extract_all(txtwhole[[i]],regex.weburl)),7,-2)
+output2[i,]<<-c(emp(year),emp(author),emp(title),emp(journal),emp(volume),emp(web))
+})
+write.csv(output2,file = "Q2.csv")
+Q2 <-as.data.frame(read_csv("Q2.csv"),locale = locale(encoding = "ASCII"))
+emp<-function(x)
+{
+if(length(x)==0)
+{
+x = NA
+}
+if(length(x)>1)
+{
+x = x[1]
+}
+return(x)
+}
+whole=getNodeSet(doc1,path="//p[contains(.,'(')]")
+url=getNodeSet(doc1,path="//p[contains(.,'(')]//a[@href]")
+content = sapply(1:length(whole), function(i) str_replace_all(xmlValue(whole[[i]]), "[\r\n]" , ""))
+txtwhole = sapply(1:length(whole),function(i) capture.output(whole[[i]],file = NULL))
+output2 <- data.frame(Year_of_publication = numeric(),
+Authors = character(),
+titile_publication = character(),
+title_journal = character(),
+volume= character(),
+url= character(),stringsAsFactors = F)
+regex.weburl = "(href=\\\").+(\\\")"
+regex.webauthor = ".+(\\([0-9]+\\))"
+regex.webtitle = "(\\([0-9]+\\)[\\.,]+).+(.)"
+regex.webjournal = "(<em>).+(<\\/em>)"
+regex.webvolume = "(<strong>).+(<\\/strong>)"
+regex.weburlcheck = "(\\([a-zA-Z\\s]+\\))"
+dopaste<-function(i)
+{
+len = length(str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]])
+start = 3
+tmp = str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]][2]
+while(start<len)
+{
+tmp = paste(tmp,str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]][start],sep="")
+start = start+1
+}
+return(tmp)
+}
+dummy = sapply(1:length(whole),function(i)
+{
+year = as.numeric(str_sub(unlist(str_extract_all(content[[i]],regex.webauthor)),-5,-2))
+author = str_sub(unlist(str_extract_all(content[[i]],regex.webauthor)),1,-7)
+title = str_split(str_sub(unlist(str_extract_all(content[[i]],regex.webtitle)),8),"\\.")[[1]][1]
+journal = ifelse(length(str_sub(unlist(str_extract_all(txtwhole[[i]],regex.webjournal)),5,-6))==0,
+dopaste(i),
+str_sub(unlist(str_extract_all(txtwhole[[i]],regex.webjournal)),5,-6))
+volume = str_sub(unlist(str_extract_all(txtwhole[[i]],regex.webvolume)),9,-10)
+web = str_sub(unlist(str_extract_all(txtwhole[[i]],regex.weburl)),7,-2)
+output2[i,]<<-c(emp(year),emp(author),emp(title),emp(journal),emp(volume),emp(web))
+})
+write.csv(output2,file = "Q2.csv")
+Q2 <-as.data.frame(read_csv("Q2.csv"),locale = locale(encoding = "ASCII"))
+View(Q2)
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(maptools)
+library(sp)
+library(rstudioapi)
+library(readr)
+library(tigris)
+library(rgeos)
+library(igraph)
+library(rgdal)
+library(leaflet)
+this.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(this.dir)
+datapath= paste(this.dir,c("/rdata"),sep = "")
+filepath = paste(this.dir,c("/file"),sep = "")
+if(!dir.exists("rdata"))
+{
+directory= paste(this.dir,c("/rdata"),sep = "")
+dir.create(directory)
+setwd(datapath)
+dcmap = get_map("Washington DC",zoom=12,maptype="terrain",source = "osm")
+save(dcmap,file = "dcmap.Rdata")
+}
+setwd(datapath)
+load("dcmap.Rdata")
+ggmap(dcmap)
+crime <- read_csv("SearchResults.csv")
+setwd(filepath)
+crime <- read_csv("SearchResults.csv")
+View(crime)
+dummy = sapply(117:120,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+dummy = sapply(117:120,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+write.csv(crime,file = "SearchResults.csv")
+crime <- read_csv("SearchResults.csv")
+dummy = sapply(121:300,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+write.csv(crime,file = "SearchResults.csv")
+setwd(filepath)
+crime <- read_csv("SearchResults.csv")
+library(ggplot2)
+library(ggmap)
+library(maps)
+library(maptools)
+library(sp)
+library(rstudioapi)
+library(readr)
+library(tigris)
+library(rgeos)
+library(igraph)
+library(rgdal)
+library(leaflet)
+#library(devtools)
+#install_version("ggplot2", version = "2.1.0", repos = "http://cran.us.r-project.org")
+this.dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(this.dir)
+datapath= paste(this.dir,c("/rdata"),sep = "")
+filepath = paste(this.dir,c("/file"),sep = "")
+if(!dir.exists("rdata"))
+{
+directory= paste(this.dir,c("/rdata"),sep = "")
+dir.create(directory)
+setwd(datapath)
+dcmap = get_map("Washington DC",zoom=12,maptype="terrain",source = "osm")
+save(dcmap,file = "dcmap.Rdata")
+}
+setwd(datapath)
+load("dcmap.Rdata")
+ggmap(dcmap)
+setwd(filepath)
+crime <- read_csv("SearchResults.csv")
+#crime$lon = 0;crime$lat = 0;
+View(crime)
+crime[:,2:length(crime)]
+crime[,2:length(crime)]
+crime = crime[,4:length(crime)]
+View(crime)
+write.csv(crime,file = "SearchResults.csv")
+crime <- read_csv("SearchResults.csv")
+View(crime)
+crime <- read_csv("SearchResults.csv")
+crime = crime[,2:length(crime)]
+View(crime)
+dummy = sapply(301:600,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+View(crime)
+write.csv(crime,file = "SearchResults.csv")
+crime <- read_csv("SearchResults.csv")
+crime = crime[,2:length(crime)]
+dummy = sapply(601:1000,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+View(crime)
+write.csv(crime,file = "SearchResults.csv")
+crime <- read_csv("SearchResults.csv")
+crime = crime[,2:length(crime)]
+View(crime)
+dummy = sapply(1001:1500,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+View(crime)
+write.csv(crime,file = "SearchResults.csv")
+crime <- read_csv("SearchResults.csv")
+crime = crime[,2:length(crime)]
+View(crime)
+dummy = sapply(1501:2000,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+View(crime)
+write.csv(crime,file = "SearchResults.csv")
+crime <- read_csv("SearchResults.csv")
+crime = crime[,2:length(crime)]
+dummy = sapply(2001:2400,function(i){
+tmp = geocode(paste(crime$BLOCK[i],"Washington DC USA"),output="latlon")
+crime$lon[i] <<- tmp$lon
+crime$lat[i] <<- tmp$lat
+return(tmp)
+})
+View(crime)
+write.csv(crime,file = "SearchResults.csv")
+this.dir
+load("~/Desktop/STA141 Project/STA 141 Project Proposal.gdoc")
+load("~/Desktop/STA141 Project/STA141Project.R")
+load("~/Desktop/STA141 Project/rdata/dcmap.Rdata")

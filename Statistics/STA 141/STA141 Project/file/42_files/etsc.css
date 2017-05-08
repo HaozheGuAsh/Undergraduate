@@ -1,0 +1,579 @@
+img
+{
+	border-style:none;
+}
+
+TD.etscFieldLbl
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+    FONT-SIZE: 10pt;
+    VERTICAL-ALIGN:middle;
+    TEXT-ALIGN:right;
+}
+
+TD.etscFieldLbl_14
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+    FONT-SIZE: 14pt;
+    VERTICAL-ALIGN:bottom;
+    TEXT-ALIGN:right;
+}
+
+TD.etscField_14
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+    FONT-SIZE: 14pt;
+    VERTICAL-ALIGN:bottom;
+    TEXT-ALIGN:left;
+}
+
+TD.etscFieldLbl_12
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+    FONT-SIZE: 12pt;
+    VERTICAL-ALIGN:bottom;
+    TEXT-ALIGN:left;
+}
+
+TD.etscField_12
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:normal;
+    FONT-SIZE: 12pt;
+    VERTICAL-ALIGN:bottom;
+    TEXT-ALIGN:left;
+}
+table.dfltLayout
+{
+	border:hidden;
+}
+Td.StdCenterBd
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 10pt;
+    BACKGROUND-IMAGE: none;
+    COLOR: white;
+    BACKGROUND-REPEAT: repeat;
+    FONT-FAMILY: Arial;
+    BACKGROUND-COLOR: #83a0c8;
+    TEXT-ALIGN: center
+}
+H1.StdLogoBlue
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 18pt;
+    COLOR: #001864;
+    FONT-FAMILY: "Arial"
+}
+H2.StdLogoBlue
+{
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 16pt;
+    COLOR: #001864;
+    FONT-FAMILY: "Arial"
+}
+
+label
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+    FONT-SIZE: 10pt;
+    VERTICAL-ALIGN: middle;
+    TEXT-ALIGN: right
+}
+
+span.required
+{
+	font:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+    FONT-SIZE: 10pt;
+    color:red;
+    VERTICAL-ALIGN: middle;
+    TEXT-ALIGN: right
+}
+
+.saveContinue{
+	border: none;
+	background:none;
+	background-image:url(../images/btn_SaveContinue.gif);
+	height:25px;
+	width:103px
+}
+
+.cancel{
+	border: none;
+	background:none;
+	background-image:url(../images/btn_Cancel.gif);
+	height:25px;
+	width:50px
+}
+
+.error{
+	color:red;
+	font:"Times New Roman", Times, serif;
+	font-size:14px;
+	text-indent:40
+}
+
+.leftNavSuper{
+	color:white;
+	font-family:"Verdana", "Arial", serif;
+	font-size:10px;
+	font-weight: bold;
+}
+/* SCR 6845
+.leftNavSub{
+	color:white;
+	font-family:"Arial", serif;
+	font-size:10px;
+	font-weight: normal;
+}
+*/
+.leftNavBorder{ /**SCR 6845**/
+	border:1px solid #CDCCCA;
+	border-bottom:2px solid #CDCCCA;
+	border-top: 2px solid #CDCCCA;
+	border-radius:10px;
+	-moz-border-radius:10px;
+    -webkit-border-radius:10px;
+	padding: 5px 14px;
+}
+
+.leftNavSub{  /**SCR 6845**/
+	color:#20567D;
+	font-family:"Arial", serif;
+	font-size:11px;
+	font-weight: normal;
+}
+
+
+
+.leftNavPositionWidth{ /**SCR 6845**/
+	margin: 0;
+	vertical-align: top;
+	height: 100%;
+	width: 152px; /*width of left navigation bar*/
+}
+
+.contentLeft{   /**SCR 6845**/
+	position: relative;
+	margin: 0;
+	vertical-align: top;
+	height: 100%;
+	width: 830px; /*width of page content*/
+}
+
+.contentLeft2{   /**SCR 6845**/
+	position: relative;
+	margin: 0;
+	vertical-align: top;
+	height: 100%;
+	width: 975px; /*width of page content*/
+}
+
+
+.contentPadding{   /**SCR 6845**/
+	margin: 0;
+	vertical-align: top;
+	padding: 5px 7px;
+}
+
+.pageHeadingBar{  /**SCR 6845**/
+	border-color: #CDCCCA;
+    border-right: 0 solid #CDCCCA;
+    border-style: solid;
+    border-width: 1px 0 0;
+	margin: 5px auto 0px auto;
+	width: 100%;
+}
+
+.pageHeadingBar2{  /** New Class 7889**/
+	border-color: #CDCCCA;
+    border-right: 0 solid #CDCCCA;
+    border-style: solid;
+    border-width: 2px 0 0;
+	margin: 0px auto 0px auto;
+	width: 100%;
+}
+
+.pageCntr{   
+	margin:0 auto;
+	background: #ffffff;
+}
+
+.contentScroll{  
+	margin:0 auto;
+	height: 100%;
+	overflow-x: auto;
+	background-color: #ffffff;
+}
+
+.contentScrollNowrap{  
+	width: 1020px;
+	margin: 0 auto;
+	height:100%;
+	overflow-x: auto;
+	white-space: nowrap;
+	background: #ffffff;
+}
+
+
+.singleWordWrap{ /**SCR 6845**/
+    word-break:break-all;
+    word-wrap: break-word;
+}
+.arialText{
+	font-size: 12pt;
+	font-style: normal;
+	text-align: left;
+	font: arial;
+}
+SPAN.ConfirmText
+{
+    FONT-SIZE: 14pt;
+    font-style: normal;
+    COLOR: black;
+    text-align: left;
+}
+SPAN.ConfirmSubText
+{
+    FONT-SIZE: 10pt;
+    FONT-STYLE: italic;
+    COLOR: black;
+    text-align: left;
+}
+SPAN.ConfirmCaution
+{
+    FONT-SIZE: 14pt;
+    FONT-STYLE: normal;
+    font-weight:bold;
+    COLOR: red;
+    text-align: center;
+}
+SPAN.ConfirmCenter
+{
+    FONT-SIZE: 14pt;
+    font-style: normal;
+    COLOR: black;
+    text-align: center;
+}
+
+.instruction{
+	color:red;
+	font:"Times New Roman", Times, serif;
+	font-size:10px;
+}
+
+/*first level list items*/
+ol.outline{
+	list-style-type: none;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 16pt;
+    FONT-FAMILY: "Arial";
+}
+ol.outline li:before{
+	FONT-WEIGHT: bold;
+	content: counter(section1, decimal)".0 ";
+}
+ol.outline li {
+	counter-increment: section1;
+	padding-top: 8pt;
+}
+/*second level list items*/
+ol.outline ol{
+	list-style-type: none;
+    FONT-WEIGHT: bold;
+    FONT-SIZE: 14pt;
+    FONT-FAMILY: "Arial";
+}
+ol.outline ol li:before{
+	FONT-WEIGHT: bold;
+	content: counter(section1, decimal)"."counter(section2, decimal) " ";
+}
+ol.outline ol li{
+	counter-increment: section2;
+}
+/*third level list items*/
+ol.outline ol ol{
+	list-style-type: none;
+    FONT-WEIGHT: normal;
+    FONT-SIZE: 12pt;
+    FONT-FAMILY: "Arial"
+}
+ol.outline ol ol li:before{
+	FONT-WEIGHT: bold;
+	content: counter(section1, decimal)"."counter(section2, decimal)"."counter(section3, decimal) " ";
+}
+ol.outline ol ol li{
+	counter-increment: section3;
+}
+/*fourth level list items*/
+ol.outline ol ol ol{
+	list-style-type: none;
+    FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+    FONT-FAMILY: "Arial"
+}
+ol.outline ol ol ol li:before{
+	FONT-WEIGHT: bold;
+	content: counter(section1, decimal)"."counter(section2, decimal)"."counter(section3, decimal)"."counter(section4, decimal) " ";
+}
+ol.outline ol ol ol li{
+	counter-increment: section4;
+}
+/*fifth level list items*/
+ol.outline ol ol ol ol{
+	list-style-type: none;
+    FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+    FONT-FAMILY: "Arial";
+}
+ol.outline ol ol ol ol li:before{
+	FONT-WEIGHT: bold;
+	content: counter(section1, decimal)"."counter(section2, decimal)"."counter(section3, decimal)"."counter(section4, decimal)"."counter(section5, decimal) " ";
+}
+ol.outline ol ol ol ol li{
+	counter-increment: section5;
+}
+
+/**Outline without numbering**/
+/*first level list items*/
+ol.instructions{
+	list-style-type: none;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 16pt;
+	FONT-FAMILY: "Arial";
+	padding-top: 5pt;
+}
+ol.instructions li{
+	padding-top: 8pt;
+}
+/*second level list items*/
+ol.instructions ol{
+	list-style-type: none;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 14pt;
+	FONT-FAMILY: "Arial";
+	padding-top: 5pt;
+}
+/*third level list items*/
+ol.instructions ol ol{
+	list-style-type: none;
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial";
+}
+ol.instructions ol ol li:before{
+	FONT-WEIGHT: bold;
+/*	content: "Option "counter(section3, decimal)" - ";*/
+	content: "";
+}
+ol.instructions ol ol li{
+/*	counter-increment: section3;*/
+	counter-increment: none;
+}
+ol.instructions ol ul{
+	list-style-type: disc;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+/*fourth level list items*/
+ol.instructions ol ol ol{
+	list-style-type: none;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+ol.instructions ol ol ol li ul{
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ol.instructions ol ol ol ul{
+	list-style-type: disc;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+ol.instructions ol ol ul li{
+	list-style-type: disc;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+ol.instructions ol ol ul li:before{
+	content: "";
+}
+ol.instructions ol ol ul li{
+	counter-increment:none;
+}
+ol.instructions ol ul ul{
+	list-style-type: circle;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+/*fifth level list items*/
+ol.instructions ol ol ol ol{
+	list-style-type: none;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+ol.instructions ol ol ol ol li ul{
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ol.instructions ol ol ul ol li{
+	list-style-type: none;
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 12pt;
+	FONT-FAMILY: "Arial"
+}
+ol.instructions ol ol ul ol ol li{
+	list-style-type: decimal;
+}
+
+/*Subtext for an outline level*/
+ul.note{
+	list-style-type: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+	padding-left:0;
+	padding-top:0;
+}
+ul.note li{
+	list-style-type: none;
+	padding-left:0;
+	padding-top:0;
+	counter-increment: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ul.note li:before{
+	content: "";
+}
+ol ul.note{
+	list-style-type: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+	padding-left:0;
+	padding-top:0;
+}
+ol ul.note li{
+	list-style-type: none;
+	padding-left:0;
+	padding-top:0;
+	counter-increment: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ol ul.note li:before{
+	content: "";
+}
+ol ol ul.note{
+	list-style-type: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+	padding-left:0;
+	padding-top:0;
+}
+ol ol ul.note li{
+	list-style-type: none;
+	padding-left:0;
+	padding-top:0;
+	counter-increment: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ol ol ul.note li:before{
+	content: "";
+}
+ol ol ol ul.note{
+	list-style-type: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+	padding-left:0;
+	padding-top:0;
+}
+ol ol ol ul.note li{
+	list-style-type: none;
+	padding-left:0;
+	padding-top:0;
+	counter-increment: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ol ol ol ul.note li:before{
+	content: "";
+}
+ul ul.note{
+	list-style-type: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+	padding-left:0;
+	padding-top:0;
+}
+ul ul.note li{
+	list-style-type: none;
+	padding-left:0;
+	padding-top:0;
+	counter-increment: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ul ul.note li:before{
+	content: "";
+}
+ul ul ul.note{
+	list-style-type: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+	padding-left:0;
+	padding-top:0;
+}
+ul ul ul.note li{
+	list-style-type: none;
+	padding-left:0;
+	padding-top:0;
+	counter-increment: none;
+	font-weight:normal;
+	FONT-SIZE: 12pt;
+}
+ul ul ul.note li:before{
+	content: "";
+}
+
+.FieldLabel_H1{
+	font-size: 18px;
+	font-weight: bold;
+	color: #000140;
+	font-family: "Arial";
+}
+.FieldLabel_H2{
+	font-size: 16px;
+	font-weight: bold;
+	color: #001864;
+	font-family: "Arial";
+}
+.FieldLabel_H3{
+	font-size: 16px;
+	font-weight: bold;
+	color: red;
+	font-family: "Arial";
+}
+.FieldLabel_TD{
+	font-size: 13px;
+	font-weight: normal;
+	font-family: "Arial";
+}
+.reqFieldNote{
+	font-size: 10px;
+	font-weight: normal;
+	font-style: italic;
+	font-family: "Arial";
+}

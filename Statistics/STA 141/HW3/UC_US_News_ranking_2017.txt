@@ -1,0 +1,9 @@
+UC Berkeley,20,27496,15
+UC Los Angeles,24,29585,17
+UC Santa Barbara,37,20607,33
+UC Irvine,39,25256,9
+UC Davis,44,28384,38
+UC San Diego,44,26590,34
+UC Santa Cruz,79,16231,51
+UC Riverside,118,18608,56
+UC Merced,152,6237,61

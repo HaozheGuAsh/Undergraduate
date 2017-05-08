@@ -1,0 +1,388 @@
+---
+title: "STA 135: Discussion 4"
+author: "Chris Conley"
+date: "February 1st, 2017"
+output:
+  beamer_presentation:
+    fig_width: 5
+    fig_height: 5
+    fig_caption: false
+fontsize: 10pt
+header-includes:
+- \usepackage{amsmath}
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE, warning = F, digits = 2)
+```
+
+## Inferences about a mean vector
+
+Code and examples will be discussed.  
+
+##  Example 5.2
+
+Import the physiology measurements derived from 20 people's sweat (Ewww!). This data is available on canvas. 
+
+```{r}
+datadir <- "~/../Box Sync/sta135-winter17/textbook_data/"
+sweat <- read.table(file.path(datadir, "T5-1.DAT"))
+names(sweat) <- c("rate", "sodium", "potassium")
+head(sweat)
+```
+
+## Test mean vector with Hotellings $T^2$ statistic
+
+Write some functions to compute the critical value and the $T^2$test statistic. Note that these functions, especially the hotellings $T^2$ is not robust to missing data and assumes the sample covariance matrix is invertible. Which is more computationally efficient: computing $T^2$ as a function of Wilk's lambda or just the regular $T^2$ formula that is a generalization of the univariate $t$-test? 
+
+```{r}
+critical_value <- function(n,p, alpha) { 
+  ((n - 1)*p / (n - p)) * 
+    qf(p = 1 - alpha, df1 = p, df2 = n - p)
+}
+t2_stat <- function(dat, mu0) { 
+  X <- as.matrix(dat)
+  n <- nrow(X)
+  Xbar <- colMeans(X)
+  d <- (Xbar - mu0)
+  n * t(d) %*%solve(cov(X)) %*% d
+}
+```
+
+
+## Test mean vector with Hotellings $T^2$ statistic
+
+$H_0: \bf \mu = (4,50,10)^T$ vs. $H_a: \bf \mu \neq (4,50,10)^T$
+
+at $\alpha = 0.10$. 
+
+```{r}
+alpha <- 0.10; n <- nrow(sweat); p <- ncol(sweat);
+crit <- critical_value(n, p, alpha)
+T2 <- t2_stat(sweat, mu = c(4,50,10))
+```
+
+Since $T^2$=`r round(T2,3)` $>$ `r round(crit,3)` $=\frac{(n - 1)p}{(n - p)}F_{3,17}(0.10)$, we reject $H_0$ in favor of $H_a$ at the 10\% significance level.  
+
+
+
+
+## 95\% $T^2$ confidence intervals for $\mu_1,\mu_2,\mu_3$
+
+Using Result 5.3, we have the following code: 
+
+```{r}
+t2_ci <- function(a, dat, alpha= 0.05) {
+  X <- as.matrix(dat)
+  Xbar <- colMeans(X)
+  n <- nrow(X)
+  p <- ncol(X)
+  crit <- critical_value(n, p, alpha)
+  center <- a %*% Xbar 
+  me <- sqrt(crit* t(a) %*% cov(X) %*% a / n)
+  c(lower = center - me, upper = center + me)
+}
+```
+
+## 95\% $T^2$ confidence intervals for $\mu_1,\mu_2,\mu_3$
+
+
+```{r}
+sci_t2 <- t(apply(X = diag(p), MARGIN = 1, 
+                  FUN = t2_ci, 
+                  dat = sweat, alpha = 0.05))
+rownames(sci_t2) <- colnames(sweat)
+kable(sci_t2, 
+      caption = "95% $T^2$ confidence intervals for sweat data")
+```
+
+## Discussion 
+
+\begin{itemize}
+\item Confidence interval methods using the $t_{n-1}(\alpha/2)$ critical value found in the univariate case do not provide simultaneous coverage of the means when considering multiple confidence intervals. For example, the coordinate-confidence intervals for each $\mu_i, i = 1, \dots, p$ are not simultaneously covered in this naive framework; see formula 5-21 when $a = (0_1,\dots, 1_i, \dots, 0_p)^T$ for the $i$th coordinate.
+\item To obtain simultaneous confidence statements for arbitrary linear combinations of the mean, we can use a larger critical value that corresponds to the $T^2$ confidence intervals (see formula 5-23, result 4.3). This is a very powerful tool that can be used under "data-snooping" contexts. 
+\item But need we pay the price of much wider confidence intervals under $T^2$ or can we do better? Bonferroni can produce more efficient (i.e. tighter) simultaneous confidence intervals than $T^2$ when we pre-specify the contrasts prior to data analysis. 
+\end{itemize}
+
+
+## 95\% Bonferroni confidence intervals for $\mu_1,\mu_2,\mu_3$
+
+We can abstract the previous confidence interval function into one that can express either result 4.3 or using the Bonferroni correction (5-29).
+
+```{r}
+cif <- function(a, dat, alpha, 
+                method = c("T2", "Bonf"), m = NULL) { 
+  X <- as.matrix(dat)
+  Xbar <- colMeans(X)
+  n <- nrow(X)
+  if (method == "T2") {
+    p <- ncol(X)
+    crit <- critical_value(n, p, alpha)
+     me <- sqrt(crit*(t(a) %*% cov(X) %*% a ) / n)
+  }
+  else if (method == "Bonf") { 
+    crit <- qt(p = 1 - (alpha/(2*m)), df = n - 1)
+    me <- crit*sqrt((t(a) %*% cov(X) %*% a ) / n)
+  }
+  center <- a %*% Xbar 
+ 
+  c(lower = center - me, upper = center + me)
+}
+```
+
+
+```{r, echo = FALSE, eval = FALSE}
+#verify that the cif function is correct
+#example 5.6 in the textbook
+#example 5.4 in the textbook
+micro <- read.table(file.path(datadir,  "../hw/e5_5.txt"), header = T)
+#BONFERRONI MATCHES EXAMPLE 5.6
+t(apply(X = diag(2), MARGIN = 1, FUN = cif, dat = micro, alpha = 0.05, method = "Bonf", m = 2))
+#T2 MATCHES EXAMPLE 5.4
+t(apply(X = diag(2), MARGIN = 1, FUN = cif, dat = micro, alpha = 0.05, method = "T2"))
+```
+
+
+## 95\% Bonferroni confidence intervals for $\mu_1,\mu_2,\mu_3$
+
+Note that we need to "pre-specify" the number of confidence intervals to be $m=3$ in the Bonferroni case. Hint: on part (d) of exercise 5.10, the number of confidence intervals is the total  number of confidence intervals from part (a) and from part (b). 
+
+## 95\% Bonferroni confidence intervals for $\mu_1,\mu_2,\mu_3$
+
+How do these Bonferroni intervals compare to the $T^2$ intervals? 
+
+```{r}
+sci_bonf <- t(apply(X = diag(p), MARGIN = 1, 
+                  FUN = cif, 
+                  dat = sweat, alpha = 0.05,
+                  method = "Bonf", m = 3))
+```
+
+Bonferroni intervals are smaller in every case. 
+
+
+```{r, echo = FALSE}
+#formatting comparison
+comp <-  cbind(paste0("(", round(sci_bonf[,1], 3), ", ", round(sci_bonf[,2],3), ")"),
+               paste0("(", round(sci_t2[,1],3), ", ", round(sci_t2[,2],3), ")"))
+colnames(comp) <- c("Bonferroni", "T^2")
+rownames(comp) <- colnames(sweat)
+kable(comp, 
+      caption = "95% simultaneous confidence intervals for sweat data")
+```
+
+
+## Exercise 5.19
+
+Read in the stiffness and bending strength measurements of the lumber data.
+
+```{r}
+lumber <- read.table(file = file.path(datadir, "T5-11.DAT"),
+                   col.names = c("stiffness", "bending_strength"))
+
+head(lumber)
+```
+
+## Confidence Ellipse: Exercise 5.19 (a,b)
+
+Define a function to plot the confidence ellipse and overlay with data points and the proposed mean, $\mu_0$.
+
+```{r}
+library(ellipse)
+ci_ellipse <- function(pw, dat, alpha, mu0) {
+  X <- as.matrix(dat); X <- X[,pw];
+  Xbar <- colMeans(X)
+  crit <- critical_value(n = nrow(X), p = ncol(X), 
+                         alpha = alpha)
+  ell_points <- ellipse(x = cov(X), centre = Xbar,
+                        t = sqrt(crit/n))
+  plot(ell_points,
+       type = "l",
+       main = "Scatter plot of data with T2 confidence ellipse",
+       ylim = c(min(X[,2]), max(X[,2])), 
+       xlim  = c(min(X[,1]), max(X[,1])))
+  #center of ellipse
+  points(Xbar[1], Xbar[2], pch = 19)
+  #proposed mu0
+  points(mu0[1], mu0[2], pch = "*", cex = 3)
+  #data 
+  points(X[,1], X[,2], pch = '+')
+}
+```
+
+
+## Confidence Ellipse Exercise 5.19 (a,b)
+
+Legend: data points with $+$, the $\mu_0$ with $*$ and the center of the ellipse with a solid black dot.
+
+```{r, echo = FALSE}
+ci_ellipse(pw = c(1,2), dat = lumber, alpha = 0.05, 
+           mu0 = c(2000, 10000))
+```
+
+## Exercise 5.19 (b)
+
+From the previous slide we see that the proposed value, $\mu_0$, is not within the confidence ellipse. Thus, $\mu_0$ does not contain plausible values for the mean stiffness and mean bending strength of the lumber. Compare this visual method with a numerical method (i.e. Hotelling $T^2$ hypothesis testing, e.g. example 5.4) for testing whether the $\mu_0$ is contained in the confidence ellipse.
+
+## Exercise 5.19 (c)
+
+Some of the following code like `qqplot.data` is hidden from view in the .pdf. Please look at the .R file for its definition.
+
+## Exercise 5.19 (c) stiffness is sufficiently normal
+
+
+```{r, echo = FALSE}
+## qqnorm with qqline in ggplot2
+#source: http://stackoverflow.com/questions/4357031/qqnorm-and-qqline-in-ggplot2/
+qqplot.data <- function (vec) # argument: vector of numbers
+{
+  library(ggplot2)
+  # following four lines from base R's qqline()
+  y <- quantile(vec[!is.na(vec)], c(0.25, 0.75))
+  x <- qnorm(c(0.25, 0.75))
+  slope <- diff(y)/diff(x)
+  int <- y[1L] - slope * x[1L]
+
+  d <- data.frame(resids = vec)
+
+  ggplot(d, aes(sample = resids)) + stat_qq() + 
+    geom_abline(slope = slope, intercept = int) + 
+    theme_bw()
+
+}
+```
+
+
+```{r}
+qqplot.data(lumber$stiffness) 
+```
+
+## Exercise 5.19 (c) bending strength is sufficiently normal
+
+
+```{r}
+qqplot.data(lumber$bending_strength) 
+```
+
+## Exercise 5.19 (c) Scatter plot is sufficiently elliptical
+
+No strong indication that bi-variate normal is grossly violated. 
+
+```{r, echo = FALSE}
+ggplot(data = lumber, aes(y = stiffness, x = bending_strength)) + 
+  geom_point() + theme_bw()
+```
+
+
+## Exercise 5.19 (c) discussion
+
+Data will almost always exhibit some deviations from normality. The `Q-Q` plots are limited diagnostics, but give us some indication that there are not gros violations of the normality assumption because the sample quantiles match fairly closely with the theoretical quantiles. With the scatter plots, we are looking for some approximation, how ever rough, of an ellipse. This is more judgement and experience about when non-normality is so strong that the interval estimation will be mis-specified for small $n - p$. For large enough $n - p$, we can overcome departures from normality through a $\chi^2$ approximation.
+
+## Exercise 5.19  95\% Confidence intervals
+
+
+```{r}
+p <- ncol(lumber)
+n <- nrow(lumber)
+ci_bonf <- t(apply(X = diag(p), MARGIN = 1, 
+                  FUN = cif, 
+                  dat = lumber, alpha = 0.05,
+                  method = "Bonf", m = 3))
+ci_t2 <- t(apply(X = diag(p), MARGIN = 1, 
+                  FUN = cif, 
+                  dat = lumber, alpha = 0.05,
+                  method = "T2", m = 3))
+```
+
+```{r, echo = FALSE}
+#formatting comparison
+comp <-  cbind(paste0("(", round(ci_bonf[,1], 3), ", ", round(ci_bonf[,2],3), ")"),
+               paste0("(", round(ci_t2[,1],3), ", ", round(ci_t2[,2],3), ")"))
+colnames(comp) <- c("Bonferroni", "T^2")
+rownames(comp) <- colnames(lumber)
+kable(comp, 
+      caption = "95% simultaneous confidence intervals for lumber data")
+```
+
+
+## Visualize Confidence Intervals
+
+
+We can compare the Bonferroni intervals with the simultaneous T^2 intervals. We write an R function, 
+`ci_compare`, found in the `.R` script version of this file to do this. Note that if two confidence intervals being compared are linear combinations of the original data, then the `ci_compare` function accepts a matrix $XA$ that is the linear combinations applied to the data matrix. For example, if $n=23, p = 4$ and  one inteval was for $\mu_2-\mu_1$ and the other was $\mu_4-\mu_3$, then the matrix 
+
+$$
+A= \begin{bmatrix}
+    -1 & 0 \\ 
+    1  & 0 \\
+    0  & -1 \\
+    0  & 1 \\
+  \end{bmatrix}
+$$
+would be used to create the right input to the function.
+
+```{r, eval = FALSE}
+XA <- X %*% A
+```
+
+But the dimensions $n=23,p=4$ of the original data matrix are still passed to the function `ci_compare` to make the right ellipse length. The following example has no special linear combinations, so it is rather straightforward.
+
+```{r, echo = FALSE}
+library(ellipse)
+ci_compare <- function(XA, n, p, alpha, 
+                       bonf_rect,  t2_rect, 
+                       xlab = "", 
+                       ylab = "") {
+  Xbar <- colMeans(XA)
+  crit <- critical_value(n = n, p = p, 
+                         alpha = alpha)
+  ell_points <- ellipse(x = cov(XA), centre = Xbar,
+                        t = sqrt(crit/n))
+  plot(ell_points,
+       type = "l",
+       main = "Compare Bonferroni to T^2", 
+       xlab = xlab, 
+       ylab = ylab)
+  #center of ellipse
+  points(Xbar[1], Xbar[2], pch = 19)
+  #bonferroni bonf_rectangle
+  segments(x0 = bonf_rect[1,1], y0 = bonf_rect[2,1], 
+           x1 = bonf_rect[1,1], y1 = bonf_rect[2,2], 
+           lty = 2)
+  segments(x0 = bonf_rect[1,1], y0 = bonf_rect[2,1], 
+           x1 = bonf_rect[1,2], y1 = bonf_rect[2,1], 
+           lty = 2)
+  segments(x0 = bonf_rect[1,2], y0 = bonf_rect[2,1], 
+           x1 = bonf_rect[1,2], y1 = bonf_rect[2,2], 
+           lty = 2)
+  segments(x0 = bonf_rect[1,2], y0 = bonf_rect[2,2], 
+           x1 = bonf_rect[1,1], y1 = bonf_rect[2,2], 
+           lty = 2)
+  #T^2 rectangle
+  segments(x0 = t2_rect[1,1], y0 = t2_rect[2,1], 
+           x1 = t2_rect[1,1], y1 = t2_rect[2,2], 
+           lty = 3)
+  segments(x0 = t2_rect[1,1], y0 = t2_rect[2,1], 
+           x1 = t2_rect[1,2], y1 = t2_rect[2,1], 
+           lty = 3)
+  segments(x0 = t2_rect[1,2], y0 = t2_rect[2,1], 
+           x1 = t2_rect[1,2], y1 = t2_rect[2,2], 
+           lty = 3)
+  segments(x0 = t2_rect[1,2], y0 = t2_rect[2,2], 
+           x1 = t2_rect[1,1], y1 = t2_rect[2,2], 
+           lty = 3)
+  legend(x = "center", c("Bonferroni","T^2"), lty = c(2,3))
+}
+```
+
+
+## Visualize Confidence Intervals
+
+```{r}
+ci_compare(X = as.matrix(lumber), n = n, p = p, alpha = 0.05, 
+           bonf_rect = ci_bonf, t2_rect = ci_t2, 
+           xlab = "Stiffness", ylab = "Bending Strength")
+```
+
+
